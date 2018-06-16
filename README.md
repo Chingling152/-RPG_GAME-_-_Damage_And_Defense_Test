@@ -1,2 +1,3 @@
-# -RPG_GAME-_-_Damage_And_Defense_Test
+# RPG_GAME - Damage And Defense Test
 This program will be useful in creating my game items. To let them balanced.
+
