@@ -10,8 +10,22 @@ namespace Calculador_De_Dano_E_Defesa.Scripts
     {
         public float hp , stamina ,pesomax;
         public int forca , destreza , resistencia , vigor;
-        public float dfisico, dfogo , draio , dveneno;
+        public float dfisico, dfogo , draio , dveneno; // Sem influencias
         public Equipamento equipamento;
+
+        //com influencias
+        public float Dfisico {
+            get { return dfisico + influencias(dfisico,equipamento);}
+        }
+        public float DFogo {
+            get { return dfogo + influencias(dfogo, equipamento);}
+        }
+        public float DRaio {
+            get { return draio + influencias(draio, equipamento); }
+        }
+        public float DVeneno {
+            get { return dveneno + influencias(dveneno, equipamento); }
+        }
 
         public Player() { 
         }
@@ -21,10 +35,10 @@ namespace Calculador_De_Dano_E_Defesa.Scripts
             this.hp = hp;
             this.stamina = stamina;
             this.pesomax = pesomax;
-            this.forca = Player.SaveCap(forca);
-            this.destreza = Player.SaveCap(destreza);
-            this.resistencia = Player.SaveCap(resistencia);
-            this.vigor = Player.SaveCap(vigor);
+            this.forca = forca>100?100:forca;
+            this.destreza = destreza>100?100:destreza;
+            this.resistencia = resistencia > 100 ? 100 : resistencia;
+            this.vigor = vigor > 100 ? 100 : vigor;
             influencias(tipo);
         }
 
@@ -41,16 +55,13 @@ namespace Calculador_De_Dano_E_Defesa.Scripts
             }else{          
                 dfisico = (1 * (resistencia * vigor) * 0.05f);
                 draio = (1 * (resistencia * 0.25f));
-                dfogo = (1 * (resistencia * vigor) * 0.10f);
+                dfogo = (1 * (resistencia * vigor) * 0.0025f);
                 dveneno = (1 * (vigor * 0.25f));          
             }
         }
 
-        public static int SaveCap(int numero) {
-            if (numero > 100){
-                numero = 100;
-            }
-            return numero;
+        public float influencias(float n, Equipamento equip){
+            return 0;
         }
     }
 }

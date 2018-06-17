@@ -23,7 +23,7 @@ namespace Calculador_De_Dano_E_Defesa.Forms
 
         private void Resultado_Load(object sender, EventArgs e)
         {
-
+            MessageBox.Show("Empty");
         }
     }
 }

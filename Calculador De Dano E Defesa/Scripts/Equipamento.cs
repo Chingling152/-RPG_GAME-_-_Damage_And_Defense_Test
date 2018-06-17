@@ -44,8 +44,5 @@ namespace Calculador_De_Dano_E_Defesa.Scripts
             this.classe = classe;
         }
 
-        public void influencias(Player player,string tipo) {
-            //basear-se em player.influencia
-        }
     }
 }

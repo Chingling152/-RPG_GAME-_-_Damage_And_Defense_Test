@@ -181,7 +181,6 @@ namespace Calculador_De_Dano_E_Defesa
             cbo_dp.SelectedIndex = cbo_de.SelectedIndex;
             if (player != null && equipamento!=null)
             {
-                equipamento.influencias(player,cbo_de.SelectedIndex.ToString());
                 MudandoInfluencias(cbo_de);
             }
         }
