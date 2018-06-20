@@ -14,7 +14,7 @@ namespace Calculador_De_Dano_E_Defesa.Scripts
     }
 
     public enum Tipo {
-        Arma, Armadura
+        Arma, Armadura//?
     }
 
     public enum Classe {

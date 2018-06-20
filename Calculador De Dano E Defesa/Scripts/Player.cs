@@ -42,6 +42,7 @@ namespace Calculador_De_Dano_E_Defesa.Scripts
             influencias(tipo);
         }
 
+        //influencia da skill
         public void influencias(string tipo) { // 1 = influencia
             hp = (100 * 1) * (vigor * 0.25f);       
             stamina = (50 * 1)*(vigor * 0.10f);                                
@@ -60,8 +61,29 @@ namespace Calculador_De_Dano_E_Defesa.Scripts
             }
         }
 
+        //influencia do equipamento
         public float influencias(float n, Equipamento equip){
-            return 0;
+            foreach (Influencia item in equip.influencia)
+            {
+                switch (item)
+                {
+                    case Influencia.Forca:
+                        n = n * ((float)forca* ((float)equip.classe * 0.10f));
+                        break;
+                    case Influencia.Destreza:
+                        n = n * ((float)destreza * ((float)equip.classe * 0.10f));
+                        break;
+                    case Influencia.Resistencia:
+                        n = n * ((float)resistencia * ((float)equip.classe * 0.10f));
+                        break;
+                    case Influencia.Vigor:
+                        n = n * ((float)vigor * ((float)equip.classe * 0.10f));
+                        break;
+                    default:
+                        break;
+                }
+            }
+            return n / equip.influencia.Count;
         }
     }
 }
