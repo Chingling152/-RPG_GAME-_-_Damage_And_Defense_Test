@@ -67,7 +67,6 @@
             this.txt_PF = new System.Windows.Forms.TextBox();
             this.txt_PD = new System.Windows.Forms.TextBox();
             this.txt_PR = new System.Windows.Forms.TextBox();
-            this.txt_PV = new System.Windows.Forms.TextBox();
             this.label15 = new System.Windows.Forms.Label();
             this.label16 = new System.Windows.Forms.Label();
             this.label17 = new System.Windows.Forms.Label();
@@ -90,6 +89,14 @@
             this.label24 = new System.Windows.Forms.Label();
             this.btn_le = new System.Windows.Forms.Button();
             this.btn_ce = new System.Windows.Forms.Button();
+            this.txt_PM = new System.Windows.Forms.TextBox();
+            this.label5 = new System.Windows.Forms.Label();
+            this.txt_PV = new System.Windows.Forms.TextBox();
+            this.txt_Pdm = new System.Windows.Forms.TextBox();
+            this.label10 = new System.Windows.Forms.Label();
+            this.txt_dm = new System.Windows.Forms.TextBox();
+            this.label25 = new System.Windows.Forms.Label();
+            this.cb_m = new System.Windows.Forms.CheckBox();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             this.panel3.SuspendLayout();
@@ -103,9 +110,9 @@
             // 
             // cbo_dp
             // 
-            resources.ApplyResources(this.cbo_dp, "cbo_dp");
             this.cbo_dp.DisplayMember = "0";
             this.cbo_dp.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            resources.ApplyResources(this.cbo_dp, "cbo_dp");
             this.cbo_dp.Items.AddRange(new object[] {
             resources.GetString("cbo_dp.Items"),
             resources.GetString("cbo_dp.Items1")});
@@ -115,9 +122,9 @@
             // 
             // cbo_de
             // 
-            resources.ApplyResources(this.cbo_de, "cbo_de");
             this.cbo_de.DisplayMember = "0";
             this.cbo_de.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            resources.ApplyResources(this.cbo_de, "cbo_de");
             this.cbo_de.Items.AddRange(new object[] {
             resources.GetString("cbo_de.Items"),
             resources.GetString("cbo_de.Items1")});
@@ -167,7 +174,8 @@
             // 
             // panel1
             // 
-            resources.ApplyResources(this.panel1, "panel1");
+            this.panel1.Controls.Add(this.txt_dm);
+            this.panel1.Controls.Add(this.label25);
             this.panel1.Controls.Add(this.cbo_de);
             this.panel1.Controls.Add(this.txt_df);
             this.panel1.Controls.Add(this.txt_dfg);
@@ -177,6 +185,7 @@
             this.panel1.Controls.Add(this.label3);
             this.panel1.Controls.Add(this.label1);
             this.panel1.Controls.Add(this.label2);
+            resources.ApplyResources(this.panel1, "panel1");
             this.panel1.Name = "panel1";
             // 
             // label8
@@ -186,17 +195,18 @@
             // 
             // panel2
             // 
-            resources.ApplyResources(this.panel2, "panel2");
-            this.panel2.Controls.Add(this.cb_r);
-            this.panel2.Controls.Add(this.cb_v);
-            this.panel2.Controls.Add(this.cb_d);
-            this.panel2.Controls.Add(this.cb_f);
             this.panel2.Controls.Add(this.r_E);
-            this.panel2.Controls.Add(this.r_D);
-            this.panel2.Controls.Add(this.r_C);
             this.panel2.Controls.Add(this.label8);
+            this.panel2.Controls.Add(this.r_D);
+            this.panel2.Controls.Add(this.cb_m);
+            this.panel2.Controls.Add(this.cb_f);
+            this.panel2.Controls.Add(this.r_C);
+            this.panel2.Controls.Add(this.cb_d);
+            this.panel2.Controls.Add(this.cb_r);
             this.panel2.Controls.Add(this.r_B);
+            this.panel2.Controls.Add(this.cb_v);
             this.panel2.Controls.Add(this.r_A);
+            resources.ApplyResources(this.panel2, "panel2");
             this.panel2.Name = "panel2";
             // 
             // cb_r
@@ -260,10 +270,10 @@
             // 
             // panel3
             // 
-            resources.ApplyResources(this.panel3, "panel3");
             this.panel3.Controls.Add(this.label6);
             this.panel3.Controls.Add(this.panel2);
             this.panel3.Controls.Add(this.panel1);
+            resources.ApplyResources(this.panel3, "panel3");
             this.panel3.Name = "panel3";
             // 
             // label6
@@ -273,17 +283,16 @@
             // 
             // panel4
             // 
-            resources.ApplyResources(this.panel4, "panel4");
             this.panel4.Controls.Add(this.panel7);
             this.panel4.Controls.Add(this.panel5);
             this.panel4.Controls.Add(this.label7);
             this.panel4.Controls.Add(this.panel6);
+            resources.ApplyResources(this.panel4, "panel4");
             this.panel4.Name = "panel4";
             this.panel4.Paint += new System.Windows.Forms.PaintEventHandler(this.panel4_Paint);
             // 
             // panel7
             // 
-            resources.ApplyResources(this.panel7, "panel7");
             this.panel7.Controls.Add(this.label19);
             this.panel7.Controls.Add(this.txt_Php);
             this.panel7.Controls.Add(this.txt_Psta);
@@ -291,6 +300,7 @@
             this.panel7.Controls.Add(this.label21);
             this.panel7.Controls.Add(this.label22);
             this.panel7.Controls.Add(this.label23);
+            resources.ApplyResources(this.panel7, "panel7");
             this.panel7.Name = "panel7";
             // 
             // label19
@@ -333,7 +343,8 @@
             // 
             // panel5
             // 
-            resources.ApplyResources(this.panel5, "panel5");
+            this.panel5.Controls.Add(this.txt_PM);
+            this.panel5.Controls.Add(this.label5);
             this.panel5.Controls.Add(this.label9);
             this.panel5.Controls.Add(this.txt_PF);
             this.panel5.Controls.Add(this.txt_PD);
@@ -343,6 +354,7 @@
             this.panel5.Controls.Add(this.label16);
             this.panel5.Controls.Add(this.label17);
             this.panel5.Controls.Add(this.label18);
+            resources.ApplyResources(this.panel5, "panel5");
             this.panel5.Name = "panel5";
             // 
             // label9
@@ -364,11 +376,6 @@
             // 
             resources.ApplyResources(this.txt_PR, "txt_PR");
             this.txt_PR.Name = "txt_PR";
-            // 
-            // txt_PV
-            // 
-            resources.ApplyResources(this.txt_PV, "txt_PV");
-            this.txt_PV.Name = "txt_PV";
             // 
             // label15
             // 
@@ -397,7 +404,8 @@
             // 
             // panel6
             // 
-            resources.ApplyResources(this.panel6, "panel6");
+            this.panel6.Controls.Add(this.txt_Pdm);
+            this.panel6.Controls.Add(this.label10);
             this.panel6.Controls.Add(this.cbo_dp);
             this.panel6.Controls.Add(this.txt_Pdf);
             this.panel6.Controls.Add(this.txt_Pdfg);
@@ -407,6 +415,7 @@
             this.panel6.Controls.Add(this.label12);
             this.panel6.Controls.Add(this.label13);
             this.panel6.Controls.Add(this.label14);
+            resources.ApplyResources(this.panel6, "panel6");
             this.panel6.Name = "panel6";
             // 
             // txt_Pdf
@@ -465,10 +474,10 @@
             // 
             // panel8
             // 
-            resources.ApplyResources(this.panel8, "panel8");
             this.panel8.Controls.Add(this.label20);
             this.panel8.Controls.Add(this.btn_lp);
             this.panel8.Controls.Add(this.btn_cp);
+            resources.ApplyResources(this.panel8, "panel8");
             this.panel8.Name = "panel8";
             // 
             // label20
@@ -478,10 +487,10 @@
             // 
             // panel9
             // 
-            resources.ApplyResources(this.panel9, "panel9");
             this.panel9.Controls.Add(this.label24);
             this.panel9.Controls.Add(this.btn_le);
             this.panel9.Controls.Add(this.btn_ce);
+            resources.ApplyResources(this.panel9, "panel9");
             this.panel9.Name = "panel9";
             // 
             // label24
@@ -501,6 +510,47 @@
             this.btn_ce.Name = "btn_ce";
             this.btn_ce.UseVisualStyleBackColor = true;
             this.btn_ce.Click += new System.EventHandler(this.btn_ce_Click);
+            // 
+            // txt_PM
+            // 
+            resources.ApplyResources(this.txt_PM, "txt_PM");
+            this.txt_PM.Name = "txt_PM";
+            // 
+            // label5
+            // 
+            resources.ApplyResources(this.label5, "label5");
+            this.label5.Name = "label5";
+            // 
+            // txt_PV
+            // 
+            resources.ApplyResources(this.txt_PV, "txt_PV");
+            this.txt_PV.Name = "txt_PV";
+            // 
+            // txt_Pdm
+            // 
+            resources.ApplyResources(this.txt_Pdm, "txt_Pdm");
+            this.txt_Pdm.Name = "txt_Pdm";
+            // 
+            // label10
+            // 
+            resources.ApplyResources(this.label10, "label10");
+            this.label10.Name = "label10";
+            // 
+            // txt_dm
+            // 
+            resources.ApplyResources(this.txt_dm, "txt_dm");
+            this.txt_dm.Name = "txt_dm";
+            // 
+            // label25
+            // 
+            resources.ApplyResources(this.label25, "label25");
+            this.label25.Name = "label25";
+            // 
+            // cb_m
+            // 
+            resources.ApplyResources(this.cb_m, "cb_m");
+            this.cb_m.Name = "cb_m";
+            this.cb_m.UseVisualStyleBackColor = true;
             // 
             // Form1
             // 
@@ -570,7 +620,6 @@
         private System.Windows.Forms.TextBox txt_PF;
         private System.Windows.Forms.TextBox txt_PD;
         private System.Windows.Forms.TextBox txt_PR;
-        private System.Windows.Forms.TextBox txt_PV;
         private System.Windows.Forms.Label label15;
         private System.Windows.Forms.Label label16;
         private System.Windows.Forms.Label label17;
@@ -597,6 +646,14 @@
         private System.Windows.Forms.CheckBox cb_v;
         private System.Windows.Forms.CheckBox cb_d;
         private System.Windows.Forms.CheckBox cb_f;
+        private System.Windows.Forms.TextBox txt_dm;
+        private System.Windows.Forms.Label label25;
+        private System.Windows.Forms.CheckBox cb_m;
+        private System.Windows.Forms.TextBox txt_PM;
+        private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.TextBox txt_PV;
+        private System.Windows.Forms.TextBox txt_Pdm;
+        private System.Windows.Forms.Label label10;
     }
 }
 

@@ -9,3 +9,7 @@ C:\Users\debaal\source\repos\Calculador De Dano E Defesa\Calculador De Dano E De
 C:\Users\debaal\source\repos\Calculador De Dano E Defesa\Calculador De Dano E Defesa\obj\Debug\Calculador De Dano E Defesa.exe
 C:\Users\debaal\source\repos\Calculador De Dano E Defesa\Calculador De Dano E Defesa\obj\Debug\Calculador De Dano E Defesa.pdb
 C:\Users\debaal\source\repos\Calculador De Dano E Defesa\Calculador De Dano E Defesa\obj\Debug\Calculador_De_Dano_E_Defesa.Forms.Resultado.resources
+C:\Users\debaal\source\repos\Calculador De Dano E Defesa\Calculador De Dano E Defesa\bin\Debug\pt-BR\Calculador De Dano E Defesa.resources.dll
+C:\Users\debaal\source\repos\Calculador De Dano E Defesa\Calculador De Dano E Defesa\obj\Debug\Calculador_De_Dano_E_Defesa.Form1.pt-BR.resources
+C:\Users\debaal\source\repos\Calculador De Dano E Defesa\Calculador De Dano E Defesa\obj\Debug\Calculador_De_Dano_E_Defesa.Forms.Resultado.pt-BR.resources
+C:\Users\debaal\source\repos\Calculador De Dano E Defesa\Calculador De Dano E Defesa\obj\Debug\pt-BR\Calculador De Dano E Defesa.resources.dll

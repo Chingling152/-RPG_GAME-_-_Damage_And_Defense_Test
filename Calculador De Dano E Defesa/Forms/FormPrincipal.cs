@@ -121,14 +121,16 @@ namespace Calculador_De_Dano_E_Defesa
                         Influencia.Forca,
                         Influencia.Destreza,
                         Influencia.Vigor,
-                        Influencia.Resistencia
+                        Influencia.Resistencia,
+                        Influencia.Magia
                     };
 
-                    CheckBox[] check = new CheckBox[4] {
+                    CheckBox[] check = new CheckBox[5] {
                         cb_f,
                         cb_d,
                         cb_v,
-                        cb_r
+                        cb_r,
+                        cb_m
                     };
 
                     Classe classe = 
@@ -142,10 +144,13 @@ namespace Calculador_De_Dano_E_Defesa
                     string tipo = cbo_de.SelectedItem.ToString();
 
                     for (int i = 0; i < check.Length; i++)
-                    {
+                    {           
                         if (!check[i].Checked)
                         {
                             influencia.RemoveAt(i);
+                        }
+                        if(influencia.Count < 1) {
+                            influencia.Add(Influencia.Nada);
                         }
                     }
 
@@ -153,14 +158,27 @@ namespace Calculador_De_Dano_E_Defesa
                     float.TryParse(txt_dr.Text.ToString(), out draio);
                     float.TryParse(txt_dfg.Text.ToString(), out dfogo);
                     float.TryParse(txt_dv.Text.ToString(), out dveneno);
+                    
 
                     //atualizar equipamento.influencias depois de criar
 
                     equipamento = new Equipamento(dfisico, draio, dfogo, dveneno, influencia, classe, tipo);
-                    
-                    Resultado r = new Resultado(equipamento,player);
+
+                    txt_df.Enabled = false;
+                    txt_dfg.Enabled = false;
+                    txt_dr.Enabled = false;
+                    txt_dv.Enabled = false;
+                    txt_dm.Enabled = false;
+
+                    cb_f.Enabled = false;
+                    cb_d.Enabled = false;
+                    cb_r.Enabled = false;
+                    cb_v.Enabled = false;
+                    cb_m.Enabled = false;
+
+
                 } catch(Exception ex) {
-                    MessageBox.Show("Erro Ao criar Equipamento : \n"+ ex.Message);
+                    MessageBox.Show("Erro Ao criar Equipamento : \n"+ ex);
                 }
             }
             else {

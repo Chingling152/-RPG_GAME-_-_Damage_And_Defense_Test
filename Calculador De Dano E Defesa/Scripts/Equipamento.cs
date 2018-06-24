@@ -10,7 +10,9 @@ namespace Calculador_De_Dano_E_Defesa.Scripts
         Forca,
         Destreza,
         Resistencia,
-        Vigor
+        Vigor,
+        Magia,
+        Nada
     }
 
     public enum Tipo {
@@ -18,11 +20,11 @@ namespace Calculador_De_Dano_E_Defesa.Scripts
     }
 
     public enum Classe {
-        A = 10,
-        B = 20,
-        C = 30,
-        D = 40,
-        E = 50
+        A = 5,
+        B = 4,
+        C = 3,
+        D = 2,
+        E = 1
     }
 
     public class Equipamento
