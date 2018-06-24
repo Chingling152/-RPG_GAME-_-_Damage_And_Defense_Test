@@ -56,11 +56,32 @@
             this.label1 = new System.Windows.Forms.Label();
             this.lbl_Player = new System.Windows.Forms.Label();
             this.splitContainer2 = new System.Windows.Forms.SplitContainer();
+            this.label10 = new System.Windows.Forms.Label();
+            this.label14 = new System.Windows.Forms.Label();
+            this.label15 = new System.Windows.Forms.Label();
+            this.label16 = new System.Windows.Forms.Label();
+            this.label17 = new System.Windows.Forms.Label();
+            this.label18 = new System.Windows.Forms.Label();
+            this.label19 = new System.Windows.Forms.Label();
+            this.label20 = new System.Windows.Forms.Label();
+            this.label21 = new System.Windows.Forms.Label();
+            this.label22 = new System.Windows.Forms.Label();
+            this.label23 = new System.Windows.Forms.Label();
+            this.txt_eiv = new System.Windows.Forms.Label();
+            this.txt_eir = new System.Windows.Forms.Label();
+            this.txt_eid = new System.Windows.Forms.Label();
+            this.txt_eif = new System.Windows.Forms.Label();
+            this.txt_edv = new System.Windows.Forms.Label();
+            this.txt_edr = new System.Windows.Forms.Label();
+            this.txt_edfg = new System.Windows.Forms.Label();
+            this.txt_edf = new System.Windows.Forms.Label();
+            this.txt_en = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
             this.splitContainer1.Panel1.SuspendLayout();
             this.splitContainer1.Panel2.SuspendLayout();
             this.splitContainer1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer2)).BeginInit();
+            this.splitContainer2.Panel1.SuspendLayout();
             this.splitContainer2.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -105,16 +126,19 @@
             // label13
             // 
             resources.ApplyResources(this.label13, "label13");
+            this.label13.ForeColor = System.Drawing.SystemColors.ButtonShadow;
             this.label13.Name = "label13";
             // 
             // txt_pe
             // 
             resources.ApplyResources(this.txt_pe, "txt_pe");
+            this.txt_pe.ForeColor = System.Drawing.Color.DarkGreen;
             this.txt_pe.Name = "txt_pe";
             // 
             // txt_php
             // 
             resources.ApplyResources(this.txt_php, "txt_php");
+            this.txt_php.ForeColor = System.Drawing.Color.DarkRed;
             this.txt_php.Name = "txt_php";
             // 
             // txt_pdv
@@ -165,16 +189,19 @@
             // txt_pm
             // 
             resources.ApplyResources(this.txt_pm, "txt_pm");
+            this.txt_pm.ForeColor = System.Drawing.SystemColors.ButtonShadow;
             this.txt_pm.Name = "txt_pm";
             // 
             // label11
             // 
             resources.ApplyResources(this.label11, "label11");
+            this.label11.ForeColor = System.Drawing.Color.DarkGreen;
             this.label11.Name = "label11";
             // 
             // label12
             // 
             resources.ApplyResources(this.label12, "label12");
+            this.label12.ForeColor = System.Drawing.Color.DarkRed;
             this.label12.Name = "label12";
             // 
             // label6
@@ -240,6 +267,131 @@
             resources.ApplyResources(this.splitContainer2, "splitContainer2");
             this.splitContainer2.Name = "splitContainer2";
             // 
+            // splitContainer2.Panel1
+            // 
+            this.splitContainer2.Panel1.Controls.Add(this.txt_en);
+            this.splitContainer2.Panel1.Controls.Add(this.txt_edv);
+            this.splitContainer2.Panel1.Controls.Add(this.txt_edr);
+            this.splitContainer2.Panel1.Controls.Add(this.txt_edfg);
+            this.splitContainer2.Panel1.Controls.Add(this.txt_edf);
+            this.splitContainer2.Panel1.Controls.Add(this.txt_eiv);
+            this.splitContainer2.Panel1.Controls.Add(this.txt_eir);
+            this.splitContainer2.Panel1.Controls.Add(this.txt_eid);
+            this.splitContainer2.Panel1.Controls.Add(this.txt_eif);
+            this.splitContainer2.Panel1.Controls.Add(this.label23);
+            this.splitContainer2.Panel1.Controls.Add(this.label19);
+            this.splitContainer2.Panel1.Controls.Add(this.label18);
+            this.splitContainer2.Panel1.Controls.Add(this.label20);
+            this.splitContainer2.Panel1.Controls.Add(this.label17);
+            this.splitContainer2.Panel1.Controls.Add(this.label21);
+            this.splitContainer2.Panel1.Controls.Add(this.label22);
+            this.splitContainer2.Panel1.Controls.Add(this.label16);
+            this.splitContainer2.Panel1.Controls.Add(this.label15);
+            this.splitContainer2.Panel1.Controls.Add(this.label14);
+            this.splitContainer2.Panel1.Controls.Add(this.label10);
+            // 
+            // label10
+            // 
+            resources.ApplyResources(this.label10, "label10");
+            this.label10.Name = "label10";
+            // 
+            // label14
+            // 
+            resources.ApplyResources(this.label14, "label14");
+            this.label14.Name = "label14";
+            // 
+            // label15
+            // 
+            resources.ApplyResources(this.label15, "label15");
+            this.label15.Name = "label15";
+            // 
+            // label16
+            // 
+            resources.ApplyResources(this.label16, "label16");
+            this.label16.Name = "label16";
+            // 
+            // label17
+            // 
+            resources.ApplyResources(this.label17, "label17");
+            this.label17.Name = "label17";
+            // 
+            // label18
+            // 
+            resources.ApplyResources(this.label18, "label18");
+            this.label18.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.label18.Name = "label18";
+            // 
+            // label19
+            // 
+            resources.ApplyResources(this.label19, "label19");
+            this.label19.Name = "label19";
+            // 
+            // label20
+            // 
+            resources.ApplyResources(this.label20, "label20");
+            this.label20.Name = "label20";
+            // 
+            // label21
+            // 
+            resources.ApplyResources(this.label21, "label21");
+            this.label21.Name = "label21";
+            // 
+            // label22
+            // 
+            resources.ApplyResources(this.label22, "label22");
+            this.label22.Name = "label22";
+            // 
+            // label23
+            // 
+            resources.ApplyResources(this.label23, "label23");
+            this.label23.Name = "label23";
+            // 
+            // txt_eiv
+            // 
+            resources.ApplyResources(this.txt_eiv, "txt_eiv");
+            this.txt_eiv.Name = "txt_eiv";
+            this.txt_eiv.Click += new System.EventHandler(this.label24_Click);
+            // 
+            // txt_eir
+            // 
+            resources.ApplyResources(this.txt_eir, "txt_eir");
+            this.txt_eir.Name = "txt_eir";
+            // 
+            // txt_eid
+            // 
+            resources.ApplyResources(this.txt_eid, "txt_eid");
+            this.txt_eid.Name = "txt_eid";
+            // 
+            // txt_eif
+            // 
+            resources.ApplyResources(this.txt_eif, "txt_eif");
+            this.txt_eif.Name = "txt_eif";
+            // 
+            // txt_edv
+            // 
+            resources.ApplyResources(this.txt_edv, "txt_edv");
+            this.txt_edv.Name = "txt_edv";
+            // 
+            // txt_edr
+            // 
+            resources.ApplyResources(this.txt_edr, "txt_edr");
+            this.txt_edr.Name = "txt_edr";
+            // 
+            // txt_edfg
+            // 
+            resources.ApplyResources(this.txt_edfg, "txt_edfg");
+            this.txt_edfg.Name = "txt_edfg";
+            // 
+            // txt_edf
+            // 
+            resources.ApplyResources(this.txt_edf, "txt_edf");
+            this.txt_edf.Name = "txt_edf";
+            // 
+            // txt_en
+            // 
+            resources.ApplyResources(this.txt_en, "txt_en");
+            this.txt_en.Name = "txt_en";
+            // 
             // Resultado
             // 
             resources.ApplyResources(this, "$this");
@@ -252,6 +404,8 @@
             this.splitContainer1.Panel2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).EndInit();
             this.splitContainer1.ResumeLayout(false);
+            this.splitContainer2.Panel1.ResumeLayout(false);
+            this.splitContainer2.Panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer2)).EndInit();
             this.splitContainer2.ResumeLayout(false);
             this.ResumeLayout(false);
@@ -287,5 +441,25 @@
         private System.Windows.Forms.Label txt_pd;
         private System.Windows.Forms.Label txt_pf;
         private System.Windows.Forms.Label txt_nv;
+        private System.Windows.Forms.Label label14;
+        private System.Windows.Forms.Label label10;
+        private System.Windows.Forms.Label label23;
+        private System.Windows.Forms.Label label19;
+        private System.Windows.Forms.Label label18;
+        private System.Windows.Forms.Label label20;
+        private System.Windows.Forms.Label label17;
+        private System.Windows.Forms.Label label21;
+        private System.Windows.Forms.Label label22;
+        private System.Windows.Forms.Label label16;
+        private System.Windows.Forms.Label label15;
+        private System.Windows.Forms.Label txt_eiv;
+        private System.Windows.Forms.Label txt_eir;
+        private System.Windows.Forms.Label txt_eid;
+        private System.Windows.Forms.Label txt_eif;
+        private System.Windows.Forms.Label txt_en;
+        private System.Windows.Forms.Label txt_edv;
+        private System.Windows.Forms.Label txt_edr;
+        private System.Windows.Forms.Label txt_edfg;
+        private System.Windows.Forms.Label txt_edf;
     }
 }

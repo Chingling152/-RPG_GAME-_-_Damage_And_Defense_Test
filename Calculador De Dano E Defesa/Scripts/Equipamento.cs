@@ -18,11 +18,11 @@ namespace Calculador_De_Dano_E_Defesa.Scripts
     }
 
     public enum Classe {
-        A,
-        B,
-        C,
-        D,
-        E
+        A = 10,
+        B = 20,
+        C = 30,
+        D = 40,
+        E = 50
     }
 
     public class Equipamento
@@ -30,9 +30,6 @@ namespace Calculador_De_Dano_E_Defesa.Scripts
         public float dfisico , draio, dfogo, dveneno;
         public List<Influencia> influencia;
         public Classe classe;
-
-        public Equipamento(){
-        }
 
         public Equipamento(float dfisico, float draio, float dfogo, float dveneno, List<Influencia> influencia,Classe classe,string tipo)
         {

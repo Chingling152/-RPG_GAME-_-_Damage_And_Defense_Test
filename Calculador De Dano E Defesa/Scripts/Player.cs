@@ -9,26 +9,15 @@ namespace Calculador_De_Dano_E_Defesa.Scripts
     public class Player
     {
         public float hp , stamina ,pesomax;
-        public int forca , destreza , resistencia , vigor;
-        public float dfisico, dfogo , draio , dveneno; // Sem influencias
+        public int forca , destreza , resistencia , vigor , magia;
+        public float dfisico, dfogo , draio , dveneno , dmagico; // Sem influencias
         public Equipamento equipamento;
 
         //com influencias
-        public float Dfisico {
-            get { return dfisico + influencias(dfisico,equipamento);}
-        }
-        public float DFogo {
-            get { return dfogo + influencias(dfogo, equipamento);}
-        }
-        public float DRaio {
-            get { return draio + influencias(draio, equipamento); }
-        }
-        public float DVeneno {
-            get { return dveneno + influencias(dveneno, equipamento); }
-        }
-
-        public Player() { 
-        }
+        public float Dfisico {get => dfisico + influencias(dfisico,equipamento);}
+        public float DFogo {get => dfogo + influencias(dfogo, equipamento);}        
+        public float DRaio {get => draio + influencias(draio, equipamento);}       
+        public float DVeneno { get => dveneno + influencias(dveneno, equipamento);}
 
         public Player(float hp, float stamina, float pesomax, int forca, int destreza, int resistencia, int vigor,string tipo)
         {
@@ -48,14 +37,15 @@ namespace Calculador_De_Dano_E_Defesa.Scripts
             stamina = (50 * 1)*(vigor * 0.10f);                                
             pesomax = (12 * 1) * (resistencia * 0.10f);
             
-            if(tipo == "Dano") { 
-                dfisico = (1 * (forca * destreza) * 0.05f);
+            if(tipo == "Dano") { //teste novo dano
+                dfisico = (1 * (forca * destreza - (magia* 0.05f)) * 0.05f);
                 dfogo = 0 ;
                 draio = 0 ;
                 dveneno = 0 ;
+                dmagico = (1* (magia) * 0.10f);
             }else{          
-                dfisico = (1 * (resistencia * vigor) * 0.05f);
-                draio = (1 * (resistencia * 0.25f));
+                dfisico = (1 * (resistencia * vigor - (magia * 0.05f)) * 0.05f);
+                draio = (1 * (resistencia * magia ) * 0.0025f);
                 dfogo = (1 * (resistencia * vigor) * 0.0025f);
                 dveneno = (1 * (vigor * 0.25f));          
             }

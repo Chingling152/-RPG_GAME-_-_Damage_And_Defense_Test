@@ -91,5 +91,10 @@ namespace Calculador_De_Dano_E_Defesa.Forms
         {
 
         }
+
+        private void label24_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
