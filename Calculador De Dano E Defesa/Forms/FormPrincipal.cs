@@ -48,31 +48,33 @@ namespace Calculador_De_Dano_E_Defesa
         //criar player
         private void btn_cp_Click(object sender, EventArgs e){
             try { 
-            //Atributos
-            float hp , stamina , pesomax;
-                //Buscando nas textboxes
-            float.TryParse(txt_Php.Text,out hp);
-            float.TryParse(txt_Psta.Text, out stamina);
-            float.TryParse(txt_Pp.Text, out pesomax);
+                //Atributos
+                float hp , stamina , pesomax;
+                    //Buscando nas textboxes
+                float.TryParse(txt_Php.Text,out hp);
+                float.TryParse(txt_Psta.Text, out stamina);
+                float.TryParse(txt_Pp.Text, out pesomax);
 
-            //Skills
-            int forca, destreza, vigor, resistencia;
-                //Buscando nas textboxes
-            int.TryParse(txt_PF.Text , out forca);
-            int.TryParse(txt_PD.Text, out destreza);
-            int.TryParse(txt_PR.Text, out resistencia);
-            int.TryParse(txt_PV.Text, out vigor);     
-                //Verificação (Para nunca ser 0 ou menor)
-            if(forca <= 0) { forca = 1; txt_PF.Text = forca.ToString(); }
-            if(destreza <= 0) { destreza = 1; txt_PD.Text = destreza.ToString(); }
-            if(vigor <= 0) { vigor = 1; txt_PV.Text = vigor.ToString(); }
-            if(resistencia <= 0) { resistencia = 1; txt_PR.Text = resistencia.ToString(); }
+                //Skills
+                int forca, destreza, vigor, resistencia,magia;
+                    //Buscando nas textboxes
+                int.TryParse(txt_PF.Text , out forca);
+                int.TryParse(txt_PD.Text, out destreza);
+                int.TryParse(txt_PR.Text, out resistencia);
+                int.TryParse(txt_PV.Text, out vigor);     
+                int.TryParse(txt_PM.Text, out magia);
+                    //Verificação (Para nunca ser 0 ou menor)
+                if(forca <= 0) {forca = 1; txt_PF.Text = forca.ToString(); }
+                if(destreza <= 0) { destreza = 1; txt_PD.Text = destreza.ToString(); }
+                if(vigor <= 0) {vigor = 1; txt_PV.Text = vigor.ToString(); }
+                if(resistencia <= 0) {resistencia = 1; txt_PR.Text = resistencia.ToString(); }
+                if(magia <= 0) {magia = 1; txt_PM.Text = resistencia.ToString(); }
 
-            //String teste (e usado no tipo de influencia)
-            string t = cbo_dp.SelectedItem.ToString();
+                //String teste (e usado no tipo de influencia)
+                string t = cbo_dp.SelectedItem.ToString();
 
-            //Criação do player
-            player = new Player(hp,stamina,pesomax,forca,destreza,resistencia,vigor,t);
+                //Criação do player
+                player = new Player(hp,stamina,pesomax,forca,destreza,resistencia,vigor,magia,t);
             }
             catch (Exception ex) {
                 MessageBox.Show("Erro Ao criar Player: \n"+ ex.Message);
@@ -86,6 +88,7 @@ namespace Calculador_De_Dano_E_Defesa
                     txt_PD.Enabled = false;
                     txt_PV.Enabled = false;
                     txt_PR.Enabled = false;
+                    txt_PM.Enabled = false;
                     btn_cp.Enabled = false;
                 }
             }
@@ -103,12 +106,26 @@ namespace Calculador_De_Dano_E_Defesa
             txt_PD.Clear();
             txt_PR.Clear();
             txt_PV.Clear();
+            txt_PM.Clear();
+
+            txt_Pdf.Clear();
+            txt_Pdfg.Clear();
+            txt_Pdr.Clear();
+            txt_Pdv.Clear();
+            txt_Pdm.Clear();
 
             txt_PF.Enabled = true;
             txt_PD.Enabled = true;
             txt_PV.Enabled = true;
             txt_PR.Enabled = true;
+            txt_PM.Enabled = true;
             btn_cp.Enabled = true;
+        }
+
+        //Limpar equipamento
+        private void btn_le_Click(object sender, EventArgs e)
+        {
+
         }
 
         //criar equipamento
@@ -116,7 +133,7 @@ namespace Calculador_De_Dano_E_Defesa
         {
             if(player != null) {
                 try { 
-                    float dfisico, draio, dfogo, dveneno;
+                    float dfisico, draio, dfogo, dveneno, dmagico;
                     List<Influencia> influencia = new List<Influencia>(){
                         Influencia.Forca,
                         Influencia.Destreza,
@@ -147,22 +164,20 @@ namespace Calculador_De_Dano_E_Defesa
                     {           
                         if (!check[i].Checked)
                         {
-                            influencia.RemoveAt(i);
+                            influencia.Remove((Influencia)i);
                         }
-                        if(influencia.Count < 1) {
-                            influencia.Add(Influencia.Nada);
-                        }
+                        
                     }
 
-                    float.TryParse(txt_df.Text.ToString(),out dfisico);
-                    float.TryParse(txt_dr.Text.ToString(), out draio);
-                    float.TryParse(txt_dfg.Text.ToString(), out dfogo);
-                    float.TryParse(txt_dv.Text.ToString(), out dveneno);
-                    
+                    float.TryParse(txt_df.Text,out dfisico);
+                    float.TryParse(txt_dr.Text, out draio);
+                    float.TryParse(txt_dfg.Text, out dfogo);
+                    float.TryParse(txt_dv.Text, out dveneno);
+                    float.TryParse(txt_dm.Text, out dmagico);
 
                     //atualizar equipamento.influencias depois de criar
 
-                    equipamento = new Equipamento(dfisico, draio, dfogo, dveneno, influencia, classe, tipo);
+                    equipamento = new Equipamento(dfisico, draio, dfogo, dveneno, dmagico, influencia, classe, tipo);
 
                     txt_df.Enabled = false;
                     txt_dfg.Enabled = false;
@@ -175,6 +190,12 @@ namespace Calculador_De_Dano_E_Defesa
                     cb_r.Enabled = false;
                     cb_v.Enabled = false;
                     cb_m.Enabled = false;
+
+                    r_A.Enabled = false;
+                    r_B.Enabled = false;
+                    r_C.Enabled = false;
+                    r_D.Enabled = false;
+
 
 
                 } catch(Exception ex) {
@@ -213,6 +234,7 @@ namespace Calculador_De_Dano_E_Defesa
                     txt_Pdfg.Text = player.dfogo.ToString();
                     txt_Pdr.Text = player.draio.ToString();
                     txt_Pdv.Text = player.dveneno.ToString();
+                    txt_Pdm.Text = player.dmagico.ToString();
 
                     //statisticas
                     txt_Php.Text = player.hp.ToString();
@@ -255,6 +277,6 @@ namespace Calculador_De_Dano_E_Defesa
         private void panel4_Paint(object sender, PaintEventArgs e){
             
         }
-    
+
     }
 }

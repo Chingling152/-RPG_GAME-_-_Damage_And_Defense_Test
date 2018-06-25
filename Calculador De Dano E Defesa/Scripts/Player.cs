@@ -19,7 +19,7 @@ namespace Calculador_De_Dano_E_Defesa.Scripts
         public float DRaio {get => draio + influencias(draio, equipamento);}       
         public float DVeneno { get => dveneno + influencias(dveneno, equipamento);}
 
-        public Player(float hp, float stamina, float pesomax, int forca, int destreza, int resistencia, int vigor,string tipo)
+        public Player(float hp, float stamina, float pesomax, int forca, int destreza, int resistencia, int vigor,int magia,string tipo)
         {
             this.hp = hp;
             this.stamina = stamina;
@@ -28,6 +28,7 @@ namespace Calculador_De_Dano_E_Defesa.Scripts
             this.destreza = destreza>100?100:destreza;
             this.resistencia = resistencia > 100 ? 100 : resistencia;
             this.vigor = vigor > 100 ? 100 : vigor;
+            this.magia = magia > 100 ? 100 : magia;
             influencias(tipo);
         }
 
@@ -38,16 +39,17 @@ namespace Calculador_De_Dano_E_Defesa.Scripts
             pesomax = (12 * 1) * (resistencia * 0.10f);
             
             if(tipo == "Dano") { //teste novo dano
-                dfisico = (1 * (forca * destreza - (magia* 0.05f)) * 0.05f);
+                dfisico = (1 * (forca * destreza) * 0.05f) -(magia * 0.05f);
                 dfogo = 0 ;
                 draio = 0 ;
                 dveneno = 0 ;
                 dmagico = (1* (magia) * 0.10f);
             }else{          
-                dfisico = (1 * (resistencia * vigor - (magia * 0.05f)) * 0.05f);
+                dfisico = (1 * (resistencia * vigor ) * 0.05f) - (magia * 0.05f);
                 draio = (1 * (resistencia * magia ) * 0.0025f);
                 dfogo = (1 * (resistencia * vigor) * 0.0025f);
-                dveneno = (1 * (vigor * 0.25f));          
+                dveneno = (1 * (vigor * 0.25f));       
+                dmagico = (1* (magia * 0.10f));
             }
         }
 
@@ -68,6 +70,9 @@ namespace Calculador_De_Dano_E_Defesa.Scripts
                         break;
                     case Influencia.Vigor:
                         n = n * ((float)vigor * ((float)equip.classe * 0.10f));
+                        break;
+                    case Influencia.Nada:
+                        ///Return n;
                         break;
                     default:
                         break;
