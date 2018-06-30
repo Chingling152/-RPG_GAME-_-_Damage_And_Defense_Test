@@ -10,6 +10,7 @@ namespace Calculador_De_Dano_E_Defesa.Scripts
     {
         public float hp , stamina ,pesomax;
         public int forca , destreza , resistencia , vigor , magia;
+        public int slotsmagia;
         public float dfisico, dfogo , draio , dveneno , dmagico; // Sem influencias
         public Equipamento equipamento;
 
@@ -37,19 +38,20 @@ namespace Calculador_De_Dano_E_Defesa.Scripts
             hp = (100 * 1) * (vigor * 0.25f);       
             stamina = (50 * 1)*(vigor * 0.10f);                                
             pesomax = (12 * 1) * (resistencia * 0.10f);
+            slotsmagia = (int)Math.Floor((float)magia * 0.10f); 
             
             if(tipo == "Dano") { //teste novo dano
-                dfisico = (1 * (forca * destreza) * 0.05f) -(magia * 0.05f);
+                dfisico = (1 * (forca * destreza - (magia * 0.025f)) * 0.05f) > 0 ? (1 * (forca * destreza - (magia * 0.025f)) * 0.05f) : 0;
                 dfogo = 0 ;
                 draio = 0 ;
                 dveneno = 0 ;
-                dmagico = (1* (magia) * 0.10f);
+                dmagico = (1* (magia * 0.05f * ((vigor + resistencia) * 0.025f)));
             }else{          
-                dfisico = (1 * (resistencia * vigor ) * 0.05f) - (magia * 0.05f);
+                dfisico = (1 * (resistencia * vigor - (magia * 0.025f)) * 0.05f);
                 draio = (1 * (resistencia * magia ) * 0.0025f);
                 dfogo = (1 * (resistencia * vigor) * 0.0025f);
                 dveneno = (1 * (vigor * 0.25f));       
-                dmagico = (1* (magia * 0.10f));
+                dmagico = (1* (magia * 0.05f - ((vigor + resistencia ) * 0.025f)));
             }
         }
 

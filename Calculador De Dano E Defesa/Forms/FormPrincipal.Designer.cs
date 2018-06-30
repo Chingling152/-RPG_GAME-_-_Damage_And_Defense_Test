@@ -58,6 +58,8 @@
             this.label6 = new System.Windows.Forms.Label();
             this.panel4 = new System.Windows.Forms.Panel();
             this.panel7 = new System.Windows.Forms.Panel();
+            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.label26 = new System.Windows.Forms.Label();
             this.label19 = new System.Windows.Forms.Label();
             this.txt_Php = new System.Windows.Forms.TextBox();
             this.txt_Psta = new System.Windows.Forms.TextBox();
@@ -97,6 +99,7 @@
             this.label24 = new System.Windows.Forms.Label();
             this.btn_le = new System.Windows.Forms.Button();
             this.btn_ce = new System.Windows.Forms.Button();
+            this.button1 = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             this.panel3.SuspendLayout();
@@ -309,6 +312,8 @@
             // 
             // panel7
             // 
+            this.panel7.Controls.Add(this.textBox1);
+            this.panel7.Controls.Add(this.label26);
             this.panel7.Controls.Add(this.label19);
             this.panel7.Controls.Add(this.txt_Php);
             this.panel7.Controls.Add(this.txt_Psta);
@@ -318,6 +323,17 @@
             this.panel7.Controls.Add(this.label23);
             resources.ApplyResources(this.panel7, "panel7");
             this.panel7.Name = "panel7";
+            // 
+            // textBox1
+            // 
+            resources.ApplyResources(this.textBox1, "textBox1");
+            this.textBox1.Name = "textBox1";
+            this.textBox1.ReadOnly = true;
+            // 
+            // label26
+            // 
+            resources.ApplyResources(this.label26, "label26");
+            this.label26.Name = "label26";
             // 
             // label19
             // 
@@ -553,14 +569,24 @@
             this.btn_ce.UseVisualStyleBackColor = true;
             this.btn_ce.Click += new System.EventHandler(this.btn_ce_Click);
             // 
+            // button1
+            // 
+            resources.ApplyResources(this.button1, "button1");
+            this.button1.Name = "button1";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
+            // 
             // Form1
             // 
             resources.ApplyResources(this, "$this");
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.Controls.Add(this.button1);
             this.Controls.Add(this.panel9);
             this.Controls.Add(this.panel4);
             this.Controls.Add(this.panel3);
             this.Controls.Add(this.panel8);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
+            this.MaximizeBox = false;
             this.Name = "Form1";
             this.Load += new System.EventHandler(this.Form1_Load);
             this.panel1.ResumeLayout(false);
@@ -655,6 +681,9 @@
         private System.Windows.Forms.TextBox txt_PV;
         private System.Windows.Forms.TextBox txt_Pdm;
         private System.Windows.Forms.Label label10;
+        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.Label label26;
     }
 }
 

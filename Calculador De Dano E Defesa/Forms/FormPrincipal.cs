@@ -122,12 +122,6 @@ namespace Calculador_De_Dano_E_Defesa
             btn_cp.Enabled = true;
         }
 
-        //Limpar equipamento
-        private void btn_le_Click(object sender, EventArgs e)
-        {
-
-        }
-
         //criar equipamento
         private void btn_ce_Click(object sender, EventArgs e)
         {
@@ -139,7 +133,8 @@ namespace Calculador_De_Dano_E_Defesa
                         Influencia.Destreza,
                         Influencia.Vigor,
                         Influencia.Resistencia,
-                        Influencia.Magia
+                        Influencia.Magia,
+                        Influencia.Nada
                     };
 
                     CheckBox[] check = new CheckBox[5] {
@@ -158,9 +153,13 @@ namespace Calculador_De_Dano_E_Defesa
                         r_E.Checked? Classe.E : 
                         Classe.E;
 
+                    if (classe.Equals(Classe.E) && !r_E.Checked) {
+                        r_E.Select();
+                    }
+
                     string tipo = cbo_de.SelectedItem.ToString();
 
-                    for (int i = 0; i < check.Length; i++)
+                    for (int i = 0; i < check.Length-1; i++)
                     {           
                         if (!check[i].Checked)
                         {
@@ -179,24 +178,23 @@ namespace Calculador_De_Dano_E_Defesa
 
                     equipamento = new Equipamento(dfisico, draio, dfogo, dveneno, dmagico, influencia, classe, tipo);
 
+                    //bloquear controles
                     txt_df.Enabled = false;
                     txt_dfg.Enabled = false;
                     txt_dr.Enabled = false;
                     txt_dv.Enabled = false;
                     txt_dm.Enabled = false;
 
-                    cb_f.Enabled = false;
-                    cb_d.Enabled = false;
-                    cb_r.Enabled = false;
-                    cb_v.Enabled = false;
-                    cb_m.Enabled = false;
+                    foreach (CheckBox item in check)
+                    {
+                        item.Enabled = false;
+                    }
 
                     r_A.Enabled = false;
                     r_B.Enabled = false;
                     r_C.Enabled = false;
                     r_D.Enabled = false;
-
-
+                    r_E.Enabled = false;
 
                 } catch(Exception ex) {
                     MessageBox.Show("Erro Ao criar Equipamento : \n"+ ex);
@@ -205,6 +203,43 @@ namespace Calculador_De_Dano_E_Defesa
             else {
                 MessageBox.Show("Primeiro Crie o Player","Exceção",MessageBoxButtons.OK,MessageBoxIcon.Exclamation);
             }
+        }
+
+        //Limpar equipamento
+        private void btn_le_Click(object sender, EventArgs e)
+        {
+            txt_df.Clear();
+            txt_dfg.Clear();
+            txt_dv.Clear();
+            txt_dr.Clear();
+            txt_dm.Clear();
+
+            cb_f.Checked = false;
+            cb_d.Checked = false;
+            cb_r.Checked = false;
+            cb_v.Checked = false;
+            cb_m.Checked = false;
+
+            r_A.Select();
+            r_A.Checked = false;
+
+            txt_df.Enabled = true;
+            txt_dfg.Enabled = true;
+            txt_dv.Enabled = true;
+            txt_dr.Enabled = true;
+            txt_dm.Enabled = true;
+
+            cb_f.Enabled = true;
+            cb_d.Enabled = true;
+            cb_r.Enabled = true;
+            cb_v.Enabled = true;
+            cb_m.Enabled = true;
+
+            r_A.Enabled = true;
+            r_B.Enabled = true;
+            r_C.Enabled = true;
+            r_D.Enabled = true;
+            r_E.Enabled = true;
         }
         //mudança do combo box (player)
         private void cbo_dp_SelectedIndexChanged(object sender, EventArgs e)
@@ -271,12 +306,19 @@ namespace Calculador_De_Dano_E_Defesa
                 }
             }
         }
-        
+
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            Resultado r = new Resultado(this.equipamento,this.player);
+            r.ShowDialog();
+        }
 
         /*Deixa isso ai....*/
         private void panel4_Paint(object sender, PaintEventArgs e){
             
         }
 
+        
     }
 }
