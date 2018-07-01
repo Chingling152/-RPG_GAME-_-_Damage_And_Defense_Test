@@ -48,13 +48,6 @@ namespace Calculador_De_Dano_E_Defesa
         //criar player
         private void btn_cp_Click(object sender, EventArgs e){
             try { 
-                //Atributos
-                float hp , stamina , pesomax;
-                    //Buscando nas textboxes
-                float.TryParse(txt_Php.Text,out hp);
-                float.TryParse(txt_Psta.Text, out stamina);
-                float.TryParse(txt_Pp.Text, out pesomax);
-
                 //Skills
                 int forca, destreza, vigor, resistencia,magia;
                     //Buscando nas textboxes
@@ -74,7 +67,7 @@ namespace Calculador_De_Dano_E_Defesa
                 string t = cbo_dp.SelectedItem.ToString();
 
                 //Criação do player
-                player = new Player(hp,stamina,pesomax,forca,destreza,resistencia,vigor,magia,t);
+                player = new Player(forca,destreza,resistencia,vigor,magia,t);
             }
             catch (Exception ex) {
                 MessageBox.Show("Erro Ao criar Player: \n"+ ex.Message);
@@ -101,6 +94,7 @@ namespace Calculador_De_Dano_E_Defesa
             txt_Php.Clear();
             txt_Psta.Clear();
             txt_Pp.Clear();
+            txt_Psm.Clear();
 
             txt_PF.Clear();
             txt_PD.Clear();
@@ -241,6 +235,7 @@ namespace Calculador_De_Dano_E_Defesa
             r_D.Enabled = true;
             r_E.Enabled = true;
         }
+
         //mudança do combo box (player)
         private void cbo_dp_SelectedIndexChanged(object sender, EventArgs e)
         {
@@ -258,11 +253,10 @@ namespace Calculador_De_Dano_E_Defesa
             {
                 MudandoInfluencias(cbo_de);
             }
-        }
-        
+        }      
         //mudança de influencias (ambos)
         void MudandoInfluencias(ComboBox CBO) {
-            if (CBO.SelectedItem.Equals("Dano")){//if & else basico 
+            if (CBO.SelectedItem.Equals("Dano")){//if & else 
                 if(CBO.Name.Equals("cbo_dp")){//se for a combo box do player
                     //dano
                     txt_Pdf.Text = player.dfisico.ToString();
@@ -275,6 +269,7 @@ namespace Calculador_De_Dano_E_Defesa
                     txt_Php.Text = player.hp.ToString();
                     txt_Psta.Text = player.stamina.ToString();
                     txt_Pp.Text = player.pesomax.ToString();
+                    txt_Psm.Text = player.slotsmagia.ToString();
                 }
                 else 
                 if (CBO.Name.Equals("cbo_de")) {//se for a combo box do equipamento
@@ -284,7 +279,7 @@ namespace Calculador_De_Dano_E_Defesa
                     txt_Pdv.Text = equipamento.dveneno.ToString();
                 }
             }
-            else if (CBO.SelectedItem.Equals("Defesa")) {// o mesmo que la em cima ... porem com influenciia da defesa
+            else if (CBO.SelectedItem.Equals("Defesa")) {// o mesmo que la em cima ... porem com influencia da defesa
                 if (CBO.Name.Equals("cbo_dp"))
                 {
                     txt_Pdf.Text = player.dfisico.ToString();
@@ -292,9 +287,11 @@ namespace Calculador_De_Dano_E_Defesa
                     txt_Pdr.Text = player.draio.ToString();
                     txt_Pdv.Text = player.dveneno.ToString();
 
+                    //statisticas
                     txt_Php.Text = player.hp.ToString();
                     txt_Psta.Text = player.stamina.ToString();
                     txt_Pp.Text = player.pesomax.ToString();
+                    txt_Psm.Text = player.slotsmagia.ToString();
                 }
                 else
               if (CBO.Name.Equals("cbo_de"))

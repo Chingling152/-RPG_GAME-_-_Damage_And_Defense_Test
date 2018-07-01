@@ -58,7 +58,7 @@
             this.label6 = new System.Windows.Forms.Label();
             this.panel4 = new System.Windows.Forms.Panel();
             this.panel7 = new System.Windows.Forms.Panel();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.txt_Psm = new System.Windows.Forms.TextBox();
             this.label26 = new System.Windows.Forms.Label();
             this.label19 = new System.Windows.Forms.Label();
             this.txt_Php = new System.Windows.Forms.TextBox();
@@ -312,7 +312,7 @@
             // 
             // panel7
             // 
-            this.panel7.Controls.Add(this.textBox1);
+            this.panel7.Controls.Add(this.txt_Psm);
             this.panel7.Controls.Add(this.label26);
             this.panel7.Controls.Add(this.label19);
             this.panel7.Controls.Add(this.txt_Php);
@@ -324,11 +324,11 @@
             resources.ApplyResources(this.panel7, "panel7");
             this.panel7.Name = "panel7";
             // 
-            // textBox1
+            // txt_Psm
             // 
-            resources.ApplyResources(this.textBox1, "textBox1");
-            this.textBox1.Name = "textBox1";
-            this.textBox1.ReadOnly = true;
+            resources.ApplyResources(this.txt_Psm, "txt_Psm");
+            this.txt_Psm.Name = "txt_Psm";
+            this.txt_Psm.ReadOnly = true;
             // 
             // label26
             // 
@@ -682,7 +682,7 @@
         private System.Windows.Forms.TextBox txt_Pdm;
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox txt_Psm;
         private System.Windows.Forms.Label label26;
     }
 }

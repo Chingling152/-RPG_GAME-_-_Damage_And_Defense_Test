@@ -97,6 +97,8 @@
             this.label36 = new System.Windows.Forms.Label();
             this.txt_fdf = new System.Windows.Forms.Label();
             this.label42 = new System.Windows.Forms.Label();
+            this.txt_psm = new System.Windows.Forms.Label();
+            this.label24 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
             this.splitContainer1.Panel1.SuspendLayout();
             this.splitContainer1.Panel2.SuspendLayout();
@@ -114,6 +116,8 @@
             // 
             // splitContainer1.Panel1
             // 
+            this.splitContainer1.Panel1.Controls.Add(this.txt_psm);
+            this.splitContainer1.Panel1.Controls.Add(this.label24);
             this.splitContainer1.Panel1.Controls.Add(this.txt_pdm);
             this.splitContainer1.Panel1.Controls.Add(this.label28);
             this.splitContainer1.Panel1.Controls.Add(this.txt_pm);
@@ -533,6 +537,18 @@
             resources.ApplyResources(this.label42, "label42");
             this.label42.Name = "label42";
             // 
+            // txt_psm
+            // 
+            resources.ApplyResources(this.txt_psm, "txt_psm");
+            this.txt_psm.ForeColor = System.Drawing.SystemColors.ActiveCaption;
+            this.txt_psm.Name = "txt_psm";
+            // 
+            // label24
+            // 
+            resources.ApplyResources(this.label24, "label24");
+            this.label24.ForeColor = System.Drawing.SystemColors.ActiveCaption;
+            this.label24.Name = "label24";
+            // 
             // Resultado
             // 
             resources.ApplyResources(this, "$this");
@@ -626,5 +642,7 @@
         private System.Windows.Forms.Label txt_fdfg;
         private System.Windows.Forms.Label label36;
         private System.Windows.Forms.Label txt_fdf;
+        private System.Windows.Forms.Label txt_psm;
+        private System.Windows.Forms.Label label24;
     }
 }

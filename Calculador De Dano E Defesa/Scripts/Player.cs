@@ -19,12 +19,10 @@ namespace Calculador_De_Dano_E_Defesa.Scripts
         public float DFogo {get => dfogo + influencias(dfogo, equipamento);}        
         public float DRaio {get => draio + influencias(draio, equipamento);}       
         public float DVeneno { get => dveneno + influencias(dveneno, equipamento);}
+        public float DMagico { get => dmagico + influencias(dmagico, equipamento); }
 
-        public Player(float hp, float stamina, float pesomax, int forca, int destreza, int resistencia, int vigor,int magia,string tipo)
+        public Player(int forca, int destreza, int resistencia, int vigor,int magia,string tipo)
         {
-            this.hp = hp;
-            this.stamina = stamina;
-            this.pesomax = pesomax;
             this.forca = forca>100?100:forca;
             this.destreza = destreza>100?100:destreza;
             this.resistencia = resistencia > 100 ? 100 : resistencia;
@@ -44,8 +42,8 @@ namespace Calculador_De_Dano_E_Defesa.Scripts
                 dfisico = (1 * (forca * destreza - (magia * 0.025f)) * 0.05f) > 0 ? (1 * (forca * destreza - (magia * 0.025f)) * 0.05f) : 0;
                 dfogo = 0 ;
                 draio = 0 ;
-                dveneno = 0 ;
-                dmagico = (1* (magia * 0.05f * ((vigor + resistencia) * 0.025f)));
+                dveneno = 0;
+                dmagico = 0;
             }else{          
                 dfisico = (1 * (resistencia * vigor - (magia * 0.025f)) * 0.05f);
                 draio = (1 * (resistencia * magia ) * 0.0025f);
@@ -72,6 +70,9 @@ namespace Calculador_De_Dano_E_Defesa.Scripts
                         break;
                     case Influencia.Vigor:
                         n = n * ((float)vigor * ((float)equip.classe * 0.10f));
+                        break;
+                    case Influencia.Magia:
+                        n = n * ((float)magia * ((float)equip.classe * 0.10f));
                         break;
                     case Influencia.Nada:
                         ///Return n;
