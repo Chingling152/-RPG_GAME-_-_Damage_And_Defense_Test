@@ -15,10 +15,6 @@ namespace Calculador_De_Dano_E_Defesa.Scripts
         Nada
     }
 
-    public enum Tipo {
-        Arma, Armadura//?
-    }
-
     public enum Classe {
         A = 5,
         B = 4,

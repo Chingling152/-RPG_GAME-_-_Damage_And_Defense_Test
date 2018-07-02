@@ -21,12 +21,14 @@ namespace Calculador_De_Dano_E_Defesa.Forms
             InitializeComponent();
             this.equipamento = equipamento;
             this.player = player;
+
+            player.equipamento = this.equipamento;
         }
 
         private void Resultado_Load(object sender, EventArgs e)
         {
             //Player
-                int nivel = player.destreza + player.forca + player.resistencia + player.vigor + player.magia - 5 ;
+                int nivel = player.destreza + player.forca + player.resistencia + player.vigor + player.magia ;
 
                 txt_nv.Text = nivel.ToString();
 
@@ -36,11 +38,11 @@ namespace Calculador_De_Dano_E_Defesa.Forms
                 txt_pv.Text = player.vigor.ToString();
                 txt_pm.Text = player.magia.ToString();
 
-                txt_pdf.Text = player.dfisico.ToString("N2");
-                txt_pdfg.Text = player.dfogo.ToString("N2");
-                txt_pdr.Text = player.draio.ToString("N2");
-                txt_pdv.Text = player.dveneno.ToString("N2");
-                txt_pdm.Text = player.dmagico.ToString("N2");
+                txt_pdf.Text = player.dfisico.ToString("N3");
+                txt_pdfg.Text = player.dfogo.ToString("N3");
+                txt_pdr.Text = player.draio.ToString("N3");
+                txt_pdv.Text = player.dveneno.ToString("N3");
+                txt_pdm.Text = player.dmagico.ToString("N3");
 
                 txt_php.Text = player.hp.ToString();
                 txt_pe.Text = player.stamina.ToString();
@@ -63,14 +65,12 @@ namespace Calculador_De_Dano_E_Defesa.Forms
                 txt_en.Text = equipamento.classe.ToString();
 
             // Player + Equipamento
-                txt_fdf.Text = player.Dfisico.ToString();
-                txt_fdfg.Text = player.DFogo.ToString();
-                txt_fdr.Text = player.DRaio.ToString();
-                txt_fdv.Text = player.DVeneno.ToString();
-                txt_fdm.Text = player.DMagico.ToString();
+                txt_fdf.Text = player.Dfisico.ToString("N3");
+                txt_fdfg.Text = player.DFogo.ToString("N3");
+                txt_fdr.Text = player.DRaio.ToString("N3");
+                txt_fdv.Text = player.DVeneno.ToString("N3");
+                txt_fdm.Text = player.DMagico.ToString("N3");
 
         }
-    }
-
-        
+    }        
 }

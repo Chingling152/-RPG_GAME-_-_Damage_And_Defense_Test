@@ -15,11 +15,11 @@ namespace Calculador_De_Dano_E_Defesa.Scripts
         public Equipamento equipamento;
 
         //com influencias
-        public float Dfisico {get => dfisico + influencias(dfisico,equipamento);}
-        public float DFogo {get => dfogo + influencias(dfogo, equipamento);}        
-        public float DRaio {get => draio + influencias(draio, equipamento);}       
-        public float DVeneno { get => dveneno + influencias(dveneno, equipamento);}
-        public float DMagico { get => dmagico + influencias(dmagico, equipamento); }
+        public float Dfisico {get {return influencias(dfisico,equipamento); } }
+        public float DFogo {get { return influencias(dfogo, equipamento);} }        
+        public float DRaio {get { return influencias(draio, equipamento);} }       
+        public float DVeneno { get { return influencias(dveneno, equipamento);} }
+        public float DMagico { get { return influencias(dmagico, equipamento);} }
 
         public Player(int forca, int destreza, int resistencia, int vigor,int magia,string tipo)
         {
@@ -74,13 +74,12 @@ namespace Calculador_De_Dano_E_Defesa.Scripts
                     case Influencia.Magia:
                         n = n * ((float)magia * ((float)equip.classe * 0.10f));
                         break;
-                    case Influencia.Nada:
-                        ///Return n;
+                    case Influencia.Nada:                    
                         break;
                     default:
                         break;
                 }
-            }
+            }         
             return n / equip.influencia.Count;
         }
     }

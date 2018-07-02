@@ -134,8 +134,8 @@ namespace Calculador_De_Dano_E_Defesa
                     CheckBox[] check = new CheckBox[5] {
                         cb_f,
                         cb_d,
-                        cb_v,
                         cb_r,
+                        cb_v,
                         cb_m
                     };
 
@@ -153,7 +153,7 @@ namespace Calculador_De_Dano_E_Defesa
 
                     string tipo = cbo_de.SelectedItem.ToString();
 
-                    for (int i = 0; i < check.Length-1; i++)
+                    for (int i = 0; i < check.Length; i++)
                     {           
                         if (!check[i].Checked)
                         {
@@ -167,6 +167,12 @@ namespace Calculador_De_Dano_E_Defesa
                     float.TryParse(txt_dfg.Text, out dfogo);
                     float.TryParse(txt_dv.Text, out dveneno);
                     float.TryParse(txt_dm.Text, out dmagico);
+
+                    if (dfisico <= 0) { dfisico = 0; txt_df.Text = dfisico.ToString(); }
+                    if (draio <= 0) { draio = 0; txt_dr.Text = draio.ToString(); }
+                    if (dfogo <= 0) { dfogo = 0; txt_dfg.Text = dfogo.ToString(); }
+                    if (dveneno <= 0) { dveneno = 0; txt_dv.Text = dveneno.ToString(); }
+                    if (dmagico <= 0) { dmagico = 0; txt_dm.Text = dmagico.ToString(); }
 
                     //atualizar equipamento.influencias depois de criar
 
@@ -184,6 +190,7 @@ namespace Calculador_De_Dano_E_Defesa
                         item.Enabled = false;
                     }
 
+                    btn_ce.Enabled = false;
                     r_A.Enabled = false;
                     r_B.Enabled = false;
                     r_C.Enabled = false;
@@ -198,7 +205,6 @@ namespace Calculador_De_Dano_E_Defesa
                 MessageBox.Show("Primeiro Crie o Player","Exceção",MessageBoxButtons.OK,MessageBoxIcon.Exclamation);
             }
         }
-
         //Limpar equipamento
         private void btn_le_Click(object sender, EventArgs e)
         {
@@ -234,6 +240,8 @@ namespace Calculador_De_Dano_E_Defesa
             r_C.Enabled = true;
             r_D.Enabled = true;
             r_E.Enabled = true;
+
+            btn_ce.Enabled = true;
         }
 
         //mudança do combo box (player)
