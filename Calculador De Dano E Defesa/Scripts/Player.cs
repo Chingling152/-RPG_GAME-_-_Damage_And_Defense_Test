@@ -40,8 +40,8 @@ namespace Calculador_De_Dano_E_Defesa.Scripts
             
             if(tipo == "Dano") { //teste novo dano
                 dfisico = (1 * (forca * destreza - (magia * 0.025f)) * 0.05f) > 0 ? (1 * (forca * destreza - (magia * 0.025f)) * 0.05f) : 0;
-                dfogo = 0 ;
-                draio = 0 ;
+                dfogo = 0;
+                draio = 0;
                 dveneno = 0;
                 dmagico = 0;
             }else{          
@@ -52,7 +52,7 @@ namespace Calculador_De_Dano_E_Defesa.Scripts
                 dmagico = (1* (magia * 0.05f - ((vigor + resistencia ) * 0.025f)));
             }
         }
-
+        
         //influencia do equipamento
         public float influencias(float n, Equipamento equip){
             foreach (Influencia item in equip.influencia)
@@ -74,8 +74,8 @@ namespace Calculador_De_Dano_E_Defesa.Scripts
                     case Influencia.Magia:
                         n = n * ((float)magia * ((float)equip.classe * 0.10f));
                         break;
-                    case Influencia.Nada:                    
-                        break;
+                    case Influencia.Nada:  
+                        return n * 0.10f;
                     default:
                         break;
                 }

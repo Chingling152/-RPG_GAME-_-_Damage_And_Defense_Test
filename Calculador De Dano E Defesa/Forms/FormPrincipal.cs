@@ -294,6 +294,7 @@ namespace Calculador_De_Dano_E_Defesa
                     txt_Pdfg.Text = player.dfogo.ToString();
                     txt_Pdr.Text = player.draio.ToString();
                     txt_Pdv.Text = player.dveneno.ToString();
+                    txt_Pdm.Text = player.dmagico.ToString();
 
                     //statisticas
                     txt_Php.Text = player.hp.ToString();
@@ -315,8 +316,18 @@ namespace Calculador_De_Dano_E_Defesa
 
         private void button1_Click(object sender, EventArgs e)
         {
-            Resultado r = new Resultado(this.equipamento,this.player);
-            r.ShowDialog();
+            if(player != null) {
+                if (equipamento != null) {
+                    Resultado r = new Resultado(this.equipamento,this.player);
+                    r.ShowDialog();
+                }
+                else {
+                    MessageBox.Show("Primeiro crie o equipamento");
+                }
+            }
+            else {
+                MessageBox.Show("Primeiro crie o player");
+            }
         }
 
         /*Deixa isso ai....*/
