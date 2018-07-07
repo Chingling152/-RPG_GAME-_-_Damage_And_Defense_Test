@@ -1,0 +1,19 @@
+C:\Users\debaal\source\repos\Calculador De Dano E Defesa\Calculador De Dano E Defesa\bin\Release\Calculador De Dano E Defesa.exe.config
+C:\Users\debaal\source\repos\Calculador De Dano E Defesa\Calculador De Dano E Defesa\bin\Release\Calculador De Dano E Defesa.exe.manifest
+C:\Users\debaal\source\repos\Calculador De Dano E Defesa\Calculador De Dano E Defesa\bin\Release\Calculador De Dano E Defesa.application
+C:\Users\debaal\source\repos\Calculador De Dano E Defesa\Calculador De Dano E Defesa\bin\Release\Calculador De Dano E Defesa.exe
+C:\Users\debaal\source\repos\Calculador De Dano E Defesa\Calculador De Dano E Defesa\bin\Release\Calculador De Dano E Defesa.pdb
+C:\Users\debaal\source\repos\Calculador De Dano E Defesa\Calculador De Dano E Defesa\bin\Release\pt-BR\Calculador De Dano E Defesa.resources.dll
+C:\Users\debaal\source\repos\Calculador De Dano E Defesa\Calculador De Dano E Defesa\obj\Release\Calculador De Dano E Defesa.csprojResolveAssemblyReference.cache
+C:\Users\debaal\source\repos\Calculador De Dano E Defesa\Calculador De Dano E Defesa\obj\Release\Calculador_De_Dano_E_Defesa.Form1.resources
+C:\Users\debaal\source\repos\Calculador De Dano E Defesa\Calculador De Dano E Defesa\obj\Release\Calculador_De_Dano_E_Defesa.Forms.Resultado.resources
+C:\Users\debaal\source\repos\Calculador De Dano E Defesa\Calculador De Dano E Defesa\obj\Release\Calculador_De_Dano_E_Defesa.Properties.Resources.resources
+C:\Users\debaal\source\repos\Calculador De Dano E Defesa\Calculador De Dano E Defesa\obj\Release\Calculador_De_Dano_E_Defesa.Form1.pt-BR.resources
+C:\Users\debaal\source\repos\Calculador De Dano E Defesa\Calculador De Dano E Defesa\obj\Release\Calculador_De_Dano_E_Defesa.Forms.Resultado.pt-BR.resources
+C:\Users\debaal\source\repos\Calculador De Dano E Defesa\Calculador De Dano E Defesa\obj\Release\Calculador De Dano E Defesa.csproj.GenerateResource.Cache
+C:\Users\debaal\source\repos\Calculador De Dano E Defesa\Calculador De Dano E Defesa\obj\Release\Calculador De Dano E Defesa.csproj.CoreCompileInputs.cache
+C:\Users\debaal\source\repos\Calculador De Dano E Defesa\Calculador De Dano E Defesa\obj\Release\pt-BR\Calculador De Dano E Defesa.resources.dll
+C:\Users\debaal\source\repos\Calculador De Dano E Defesa\Calculador De Dano E Defesa\obj\Release\Calculador De Dano E Defesa.exe.manifest
+C:\Users\debaal\source\repos\Calculador De Dano E Defesa\Calculador De Dano E Defesa\obj\Release\Calculador De Dano E Defesa.application
+C:\Users\debaal\source\repos\Calculador De Dano E Defesa\Calculador De Dano E Defesa\obj\Release\Calculador De Dano E Defesa.exe
+C:\Users\debaal\source\repos\Calculador De Dano E Defesa\Calculador De Dano E Defesa\obj\Release\Calculador De Dano E Defesa.pdb

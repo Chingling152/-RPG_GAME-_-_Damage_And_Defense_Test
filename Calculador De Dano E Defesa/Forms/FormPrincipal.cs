@@ -31,7 +31,8 @@ namespace Calculador_De_Dano_E_Defesa
         /// </Botões>
 
         public Player player;
-        public Equipamento equipamento;
+        public Arma arma;
+        public Armadura armadura;
 
         public Form1()
         {
@@ -42,11 +43,10 @@ namespace Calculador_De_Dano_E_Defesa
         private void Form1_Load(object sender, EventArgs e)
         {
             cbo_dp.SelectedIndex = 0;
-            cbo_de.SelectedIndex = 0;
         }
 
         //criar player
-        private void btn_cp_Click(object sender, EventArgs e){
+        private void Btn_cp_Click(object sender, EventArgs e){
             try { 
                 //Skills
                 int forca, destreza, vigor, resistencia,magia;
@@ -87,9 +87,21 @@ namespace Calculador_De_Dano_E_Defesa
             }
         }
         //limpar (Player)
-        private void btn_lp_Click(object sender, EventArgs e)
+        private void Btn_lp_Click(object sender, EventArgs e)
         {
             player = null;
+
+            LimparPlayer();
+
+            txt_PF.Enabled = true;
+            txt_PD.Enabled = true;
+            txt_PV.Enabled = true;
+            txt_PR.Enabled = true;
+            txt_PM.Enabled = true;
+            btn_cp.Enabled = true;
+        }
+        //Limpar campos (Player)
+        void LimparPlayer() {
 
             txt_Php.Clear();
             txt_Psta.Clear();
@@ -107,51 +119,133 @@ namespace Calculador_De_Dano_E_Defesa
             txt_Pdr.Clear();
             txt_Pdv.Clear();
             txt_Pdm.Clear();
-
-            txt_PF.Enabled = true;
-            txt_PD.Enabled = true;
-            txt_PV.Enabled = true;
-            txt_PR.Enabled = true;
-            txt_PM.Enabled = true;
-            btn_cp.Enabled = true;
+        }
+        //mudança do combo box (player)
+        private void Cbo_dp_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (player != null)
+            {
+                player.Influencias();
+                MudandoInfluencias(cbo_dp);
+            }
+        }
+        //mudança de influencias
+        void MudandoInfluencias(ComboBox CBO)
+        {
+            /*Player*/
+            if (CBO.SelectedIndex.Equals(0))
+            {
+                txt_Pdf.Text = player.danofisico.ToString();
+                txt_Pdfg.Text = player.danofogo.ToString();
+                txt_Pdr.Text = player.danoraio.ToString();
+                txt_Pdv.Text = player.danoveneno.ToString();
+                txt_Pdm.Text = player.danomagico.ToString();
+            }
+            else
+            {
+                txt_Pdf.Text = player.defesafisica.ToString();
+                txt_Pdfg.Text = player.defesafogo.ToString();
+                txt_Pdr.Text = player.defesaraio.ToString();
+                txt_Pdv.Text = player.defesaveneno.ToString();
+                txt_Pdm.Text = player.defesamagica.ToString();
+            }
+            //statisticas
+            txt_Php.Text = player.hp.ToString();
+            txt_Psta.Text = player.stamina.ToString();
+            txt_Pp.Text = player.pesomax.ToString();
+            txt_Psm.Text = player.slotsmagia.ToString();
         }
 
-        //criar equipamento
-        private void btn_ce_Click(object sender, EventArgs e)
+        //Ativar armadura
+        private void cb_A_CheckedChanged(object sender, EventArgs e)
+        {
+
+            if (!cb_a.Checked)
+            {
+                //Limpar campos
+                LimparArma();
+
+                //desabilitar campos
+                txt_adf.Enabled = false;
+                txt_adfg.Enabled = false;
+                txt_adv.Enabled = false;
+                txt_adr.Enabled = false;
+                txt_adm.Enabled = false;
+
+                cb_af.Enabled = false;
+                cb_ad.Enabled = false;
+                cb_ar.Enabled = false;
+                cb_av.Enabled = false;
+                cb_am.Enabled = false;
+
+                r_a_A.Enabled = false;
+                r_a_B.Enabled = false;
+                r_a_C.Enabled = false;
+                r_a_D.Enabled = false;
+                r_a_E.Enabled = false;
+
+                btn_ca.Enabled = false;
+                btn_la.Enabled = false;
+
+                arma = null;
+            }
+            else
+            {
+                txt_adf.Enabled = true;
+                txt_adfg.Enabled = true;
+                txt_adv.Enabled = true;
+                txt_adr.Enabled = true;
+                txt_adm.Enabled = true;
+
+                cb_af.Enabled = true;
+                cb_ad.Enabled = true;
+                cb_ar.Enabled = true;
+                cb_av.Enabled = true;
+                cb_am.Enabled = true;
+
+                r_a_A.Enabled = true;
+                r_a_B.Enabled = true;
+                r_a_C.Enabled = true;
+                r_a_D.Enabled = true;
+                r_a_E.Enabled = true;
+
+                btn_ca.Enabled = true;
+                btn_la.Enabled = true;
+            }
+        }
+
+        //criar arma
+        private void Btn_ca_Click(object sender, EventArgs e)
         {
             if(player != null) {
-                try { 
-                    float dfisico, draio, dfogo, dveneno, dmagico;
+                try {
                     List<Influencia> influencia = new List<Influencia>(){
                         Influencia.Forca,
                         Influencia.Destreza,
                         Influencia.Vigor,
                         Influencia.Resistencia,
-                        Influencia.Magia,
-                        Influencia.Nada
+                        Influencia.Magia
                     };
 
                     CheckBox[] check = new CheckBox[5] {
-                        cb_f,
-                        cb_d,
-                        cb_r,
-                        cb_v,
-                        cb_m
+                        cb_af,
+                        cb_ad,
+                        cb_ar,
+                        cb_av,
+                        cb_am
                     };
 
                     Classe classe = 
-                        r_A.Checked? Classe.A :
-                        r_B.Checked? Classe.B :
-                        r_C.Checked? Classe.C :
-                        r_D.Checked? Classe.D :
-                        r_E.Checked? Classe.E : 
+                        r_a_A.Checked? Classe.A :
+                        r_a_B.Checked? Classe.B :
+                        r_a_C.Checked? Classe.C :
+                        r_a_D.Checked? Classe.D :
+                        r_a_E.Checked? Classe.E : 
                         Classe.E;
 
-                    if (classe.Equals(Classe.E) && !r_E.Checked) {
-                        r_E.Select();
+                    if (classe.Equals(Classe.E) && !r_a_E.Checked) {
+                        r_a_E.Select();
                     }
-
-                    string tipo = cbo_de.SelectedItem.ToString();
 
                     for (int i = 0; i < check.Length; i++)
                     {           
@@ -159,43 +253,46 @@ namespace Calculador_De_Dano_E_Defesa
                         {
                             influencia.Remove((Influencia)i);
                         }
-                        
                     }
 
-                    float.TryParse(txt_df.Text,out dfisico);
-                    float.TryParse(txt_dr.Text, out draio);
-                    float.TryParse(txt_dfg.Text, out dfogo);
-                    float.TryParse(txt_dv.Text, out dveneno);
-                    float.TryParse(txt_dm.Text, out dmagico);
+                    if(influencia.Count == 0) {
+                        influencia.Add(Influencia.Nada);
+                    }
 
-                    if (dfisico <= 0) { dfisico = 0; txt_df.Text = dfisico.ToString(); }
-                    if (draio <= 0) { draio = 0; txt_dr.Text = draio.ToString(); }
-                    if (dfogo <= 0) { dfogo = 0; txt_dfg.Text = dfogo.ToString(); }
-                    if (dveneno <= 0) { dveneno = 0; txt_dv.Text = dveneno.ToString(); }
-                    if (dmagico <= 0) { dmagico = 0; txt_dm.Text = dmagico.ToString(); }
+                    float.TryParse(txt_adf.Text,out float danofisico);
+                    float.TryParse(txt_adr.Text, out float danoraio);
+                    float.TryParse(txt_adfg.Text, out float danofogo);
+                    float.TryParse(txt_adv.Text, out float danoveneno);
+                    float.TryParse(txt_adm.Text, out float danomagico);
+
+                    if (danofisico <= 0) { danofisico = 0; txt_adf.Text = danofisico.ToString(); }
+                    if (danoraio <= 0) { danoraio = 0; txt_adr.Text = danoraio.ToString(); }
+                    if (danofogo <= 0) { danofogo = 0; txt_adfg.Text = danofogo.ToString(); }
+                    if (danoveneno <= 0) { danoveneno = 0; txt_adv.Text = danoveneno.ToString(); }
+                    if (danomagico <= 0) { danomagico = 0; txt_adm.Text = danomagico.ToString(); }
 
                     //atualizar equipamento.influencias depois de criar
 
-                    equipamento = new Equipamento(dfisico, draio, dfogo, dveneno, dmagico, influencia, classe, tipo);
+                    arma = new Arma(danofisico, danoraio, danofogo, danoveneno, danomagico, influencia, classe);
 
                     //bloquear controles
-                    txt_df.Enabled = false;
-                    txt_dfg.Enabled = false;
-                    txt_dr.Enabled = false;
-                    txt_dv.Enabled = false;
-                    txt_dm.Enabled = false;
+                    txt_adf.Enabled = false;
+                    txt_adfg.Enabled = false;
+                    txt_adr.Enabled = false;
+                    txt_adv.Enabled = false;
+                    txt_adm.Enabled = false;
 
                     foreach (CheckBox item in check)
                     {
                         item.Enabled = false;
                     }
 
-                    btn_ce.Enabled = false;
-                    r_A.Enabled = false;
-                    r_B.Enabled = false;
-                    r_C.Enabled = false;
-                    r_D.Enabled = false;
-                    r_E.Enabled = false;
+                    btn_ca.Enabled = false;
+                    r_a_A.Enabled = false;
+                    r_a_B.Enabled = false;
+                    r_a_C.Enabled = false;
+                    r_a_D.Enabled = false;
+                    r_a_E.Enabled = false;
 
                 } catch(Exception ex) {
                     MessageBox.Show("Erro Ao criar Equipamento : \n"+ ex);
@@ -205,124 +302,219 @@ namespace Calculador_De_Dano_E_Defesa
                 MessageBox.Show("Primeiro Crie o Player","Exceção",MessageBoxButtons.OK,MessageBoxIcon.Exclamation);
             }
         }
-        //Limpar equipamento
-        private void btn_le_Click(object sender, EventArgs e)
+
+        //Limpar arma
+        private void Btn_la_Click(object sender, EventArgs e)
         {
-            txt_df.Clear();
-            txt_dfg.Clear();
-            txt_dv.Clear();
-            txt_dr.Clear();
-            txt_dm.Clear();
+            //Limpar campos
+            LimparArma();
 
-            cb_f.Checked = false;
-            cb_d.Checked = false;
-            cb_r.Checked = false;
-            cb_v.Checked = false;
-            cb_m.Checked = false;
+            //ativar campos
+            txt_adf.Enabled = true;
+            txt_adfg.Enabled = true;
+            txt_adv.Enabled = true;
+            txt_adr.Enabled = true;
+            txt_adm.Enabled = true;
 
-            r_A.Select();
-            r_A.Checked = false;
+            cb_af.Enabled = true;
+            cb_ad.Enabled = true;
+            cb_ar.Enabled = true;
+            cb_av.Enabled = true;
+            cb_am.Enabled = true;
 
-            txt_df.Enabled = true;
-            txt_dfg.Enabled = true;
-            txt_dv.Enabled = true;
-            txt_dr.Enabled = true;
-            txt_dm.Enabled = true;
+            r_a_A.Enabled = true;
+            r_a_B.Enabled = true;
+            r_a_C.Enabled = true;
+            r_a_D.Enabled = true;
+            r_a_E.Enabled = true;
 
-            cb_f.Enabled = true;
-            cb_d.Enabled = true;
-            cb_r.Enabled = true;
-            cb_v.Enabled = true;
-            cb_m.Enabled = true;
-
-            r_A.Enabled = true;
-            r_B.Enabled = true;
-            r_C.Enabled = true;
-            r_D.Enabled = true;
-            r_E.Enabled = true;
-
-            btn_ce.Enabled = true;
+            btn_ca.Enabled = true;
         }
 
-        //mudança do combo box (player)
-        private void cbo_dp_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            cbo_de.SelectedIndex = cbo_dp.SelectedIndex;
-            if (player != null) {
-                player.influencias(cbo_dp.SelectedItem.ToString());
-                MudandoInfluencias(cbo_dp);
-            }
+        //Limpar campos (Arma)
+        void LimparArma() {
+            txt_adf.Clear();
+            txt_adfg.Clear();
+            txt_adv.Clear();
+            txt_adr.Clear();
+            txt_adm.Clear();
+
+            cb_af.Checked = false;
+            cb_ad.Checked = false;
+            cb_ar.Checked = false;
+            cb_av.Checked = false;
+            cb_am.Checked = false;
+
+            r_a_A.Select();
+            r_a_A.Checked = false;
+
+            arma = null;
         }
-        //mudança do combo box (equipamento)
-        private void cbo_de_SelectedIndexChanged(object sender, EventArgs e)
+
+        //Criar armadura
+        private void Btn_c_ar_Click(object sender, EventArgs e)
         {
-            cbo_dp.SelectedIndex = cbo_de.SelectedIndex;
-            if (player != null && equipamento!=null)
+            if (player != null)
             {
-                MudandoInfluencias(cbo_de);
-            }
-        }      
-        //mudança de influencias (ambos)
-        void MudandoInfluencias(ComboBox CBO) {
-            if (CBO.SelectedItem.Equals("Dano")){//if & else 
-                if(CBO.Name.Equals("cbo_dp")){//se for a combo box do player
-                    //dano
-                    txt_Pdf.Text = player.dfisico.ToString();
-                    txt_Pdfg.Text = player.dfogo.ToString();
-                    txt_Pdr.Text = player.draio.ToString();
-                    txt_Pdv.Text = player.dveneno.ToString();
-                    txt_Pdm.Text = player.dmagico.ToString();
-
-                    //statisticas
-                    txt_Php.Text = player.hp.ToString();
-                    txt_Psta.Text = player.stamina.ToString();
-                    txt_Pp.Text = player.pesomax.ToString();
-                    txt_Psm.Text = player.slotsmagia.ToString();
-                }
-                else 
-                if (CBO.Name.Equals("cbo_de")) {//se for a combo box do equipamento
-                    txt_Pdf.Text = equipamento.dfisico.ToString();
-                    txt_Pdfg.Text = equipamento.dfogo.ToString();
-                    txt_Pdr.Text = equipamento.draio.ToString();
-                    txt_Pdv.Text = equipamento.dveneno.ToString();
-                }
-            }
-            else if (CBO.SelectedItem.Equals("Defesa")) {// o mesmo que la em cima ... porem com influencia da defesa
-                if (CBO.Name.Equals("cbo_dp"))
+                try
                 {
-                    txt_Pdf.Text = player.dfisico.ToString();
-                    txt_Pdfg.Text = player.dfogo.ToString();
-                    txt_Pdr.Text = player.draio.ToString();
-                    txt_Pdv.Text = player.dveneno.ToString();
-                    txt_Pdm.Text = player.dmagico.ToString();
+                    List<Influencia> influencia = new List<Influencia>(){
+                        Influencia.Forca,
+                        Influencia.Destreza,
+                        Influencia.Vigor,
+                        Influencia.Resistencia,
+                        Influencia.Magia
+                    };
 
-                    //statisticas
-                    txt_Php.Text = player.hp.ToString();
-                    txt_Psta.Text = player.stamina.ToString();
-                    txt_Pp.Text = player.pesomax.ToString();
-                    txt_Psm.Text = player.slotsmagia.ToString();
+                    CheckBox[] check = new CheckBox[5] {
+                        cb_ar_f,
+                        cb_ar_d,
+                        cb_ar_r,
+                        cb_ar_v,
+                        cb_ar_m
+                    };
+
+                    Classe classe =
+                        r_ar_A.Checked ? Classe.A :
+                        r_ar_B.Checked ? Classe.B :
+                        r_ar_C.Checked ? Classe.C :
+                        r_ar_D.Checked ? Classe.D :
+                        r_ar_E.Checked ? Classe.E :
+                        Classe.E;
+
+                    if (classe.Equals(Classe.E) && !r_ar_E.Checked)
+                    {
+                        r_a_E.Select();
+                    }
+
+                    for (int i = 0; i < check.Length; i++)
+                    {
+                        if (!check[i].Checked)
+                        {
+                            influencia.Remove((Influencia)i);
+                        }
+                    }
+
+                    if (influencia.Count == 0)
+                    {
+                        influencia.Add(Influencia.Nada);
+                    }
+
+                    float.TryParse(txt_ar_df.Text, out float defesafisica);
+                    float.TryParse(txt_ar_dr.Text, out float defesaraio);
+                    float.TryParse(txt_ar_dfg.Text, out float defesafogo);
+                    float.TryParse(txt_ar_dv.Text, out float defesaveneno);
+                    float.TryParse(txt_ar_dm.Text, out float defesamagica);
+
+                    if (defesafisica <= 0) { defesafisica = 0; txt_adf.Text = defesafisica.ToString(); }
+                    if (defesaraio <= 0) { defesaraio = 0; txt_adr.Text = defesaraio.ToString(); }
+                    if (defesafogo <= 0) { defesafogo = 0; txt_adfg.Text = defesafogo.ToString(); }
+                    if (defesaveneno <= 0) { defesaveneno = 0; txt_adv.Text = defesaveneno.ToString(); }
+                    if (defesamagica <= 0) { defesamagica = 0; txt_adm.Text = defesamagica.ToString(); }
+
+                    //atualizar equipamento.influencias depois de criar
+
+                    armadura = new Armadura(defesafisica, defesaraio, defesafogo, defesaveneno, defesamagica, influencia, classe);
+
+                    //bloquear controles
+                    txt_ar_df.Enabled = false;
+                    txt_ar_dfg.Enabled = false;
+                    txt_ar_dr.Enabled = false;
+                    txt_ar_dv.Enabled = false;
+                    txt_ar_dm.Enabled = false;
+
+                    foreach (CheckBox item in check)
+                    {
+                        item.Enabled = false;
+                    }
+
+                    btn_c_ar.Enabled = false;
+                    r_ar_A.Enabled = false;
+                    r_ar_B.Enabled = false;
+                    r_ar_C.Enabled = false;
+                    r_ar_D.Enabled = false;
+                    r_ar_E.Enabled = false;
+
                 }
-                else
-              if (CBO.Name.Equals("cbo_de"))
+                catch (Exception ex)
                 {
-                    txt_Pdf.Text = equipamento.dfisico.ToString();
-                    txt_Pdfg.Text = equipamento.dfogo.ToString();
-                    txt_Pdr.Text = equipamento.draio.ToString();
-                    txt_Pdv.Text = equipamento.dveneno.ToString();
+                    MessageBox.Show("Erro Ao criar Equipamento : \n" + ex);
                 }
             }
+            else
+            {
+                MessageBox.Show("Primeiro Crie o Player", "Exceção", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+            }       
         }
 
+        //Ativar armadura
+        private void Cb_arm_CheckedChanged(object sender, EventArgs e)
+        {
+            if (!cb_arm.Checked)
+            {
+                //Limpar campos
+                LimparArma();
 
-        private void button1_Click(object sender, EventArgs e)
+                //desabilitar campos
+                txt_ar_df.Enabled = false;
+                txt_ar_dfg.Enabled = false;
+                txt_ar_dv.Enabled = false;
+                txt_ar_dr.Enabled = false;
+                txt_ar_dm.Enabled = false;
+
+                cb_ar_f.Enabled = false;
+                cb_ar_d.Enabled = false;
+                cb_ar_r.Enabled = false;
+                cb_ar_v.Enabled = false;
+                cb_ar_m.Enabled = false;
+
+                r_ar_A.Enabled = false;
+                r_ar_B.Enabled = false;
+                r_ar_C.Enabled = false;
+                r_ar_D.Enabled = false;
+                r_ar_E.Enabled = false;
+
+                btn_c_ar.Enabled = false;
+                btn_l_ar.Enabled = false;
+
+                armadura = null;
+            }
+            else {
+                //desabilitar campos
+                txt_ar_df.Enabled = true;
+                txt_ar_dfg.Enabled = true;
+                txt_ar_dv.Enabled = true;
+                txt_ar_dr.Enabled = true;
+                txt_ar_dm.Enabled = true;
+
+                cb_ar_f.Enabled = true;
+                cb_ar_d.Enabled = true;
+                cb_ar_r.Enabled = true;
+                cb_ar_v.Enabled = true;
+                cb_ar_m.Enabled = true;
+
+                r_ar_A.Enabled = true;
+                r_ar_B.Enabled = true;
+                r_ar_C.Enabled = true;
+                r_ar_D.Enabled = true;
+                r_ar_E.Enabled = true;
+
+                btn_c_ar.Enabled = true;
+                btn_l_ar.Enabled = true;
+            }
+            
+        }
+
+        //RESULTADO
+        private void Button1_Click(object sender, EventArgs e)
         {
             if(player != null) {
-                if (equipamento != null) {
-                    Resultado r = new Resultado(this.equipamento,this.player);
-                    r.ShowDialog();
+                if (arma != null || armadura != null) {
+                        Resultado r = new Resultado(this.arma,this.armadura,this.player);
+                        r.ShowDialog();
                 }
                 else {
-                    MessageBox.Show("Primeiro crie o equipamento");
+                    MessageBox.Show("O Player não pode ser instanciado sem equipamento!!");
                 }
             }
             else {
@@ -330,11 +522,5 @@ namespace Calculador_De_Dano_E_Defesa
             }
         }
 
-        /*Deixa isso ai....*/
-        private void panel4_Paint(object sender, PaintEventArgs e){
-            
-        }
-
-        
     }
 }

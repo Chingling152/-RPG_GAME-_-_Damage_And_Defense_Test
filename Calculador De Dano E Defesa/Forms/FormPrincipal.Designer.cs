@@ -30,32 +30,32 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
             this.cbo_dp = new System.Windows.Forms.ComboBox();
-            this.cbo_de = new System.Windows.Forms.ComboBox();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
-            this.txt_dv = new System.Windows.Forms.TextBox();
-            this.txt_dr = new System.Windows.Forms.TextBox();
-            this.txt_dfg = new System.Windows.Forms.TextBox();
-            this.txt_df = new System.Windows.Forms.TextBox();
+            this.txt_adv = new System.Windows.Forms.TextBox();
+            this.txt_adr = new System.Windows.Forms.TextBox();
+            this.txt_adfg = new System.Windows.Forms.TextBox();
+            this.txt_adf = new System.Windows.Forms.TextBox();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.txt_dm = new System.Windows.Forms.TextBox();
+            this.label27 = new System.Windows.Forms.Label();
+            this.txt_adm = new System.Windows.Forms.TextBox();
             this.label25 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
-            this.r_E = new System.Windows.Forms.RadioButton();
-            this.r_D = new System.Windows.Forms.RadioButton();
-            this.cb_m = new System.Windows.Forms.CheckBox();
-            this.cb_f = new System.Windows.Forms.CheckBox();
-            this.r_C = new System.Windows.Forms.RadioButton();
-            this.cb_d = new System.Windows.Forms.CheckBox();
-            this.cb_r = new System.Windows.Forms.CheckBox();
-            this.r_B = new System.Windows.Forms.RadioButton();
-            this.cb_v = new System.Windows.Forms.CheckBox();
-            this.r_A = new System.Windows.Forms.RadioButton();
+            this.r_a_E = new System.Windows.Forms.RadioButton();
+            this.r_a_D = new System.Windows.Forms.RadioButton();
+            this.cb_am = new System.Windows.Forms.CheckBox();
+            this.cb_af = new System.Windows.Forms.CheckBox();
+            this.r_a_C = new System.Windows.Forms.RadioButton();
+            this.cb_ad = new System.Windows.Forms.CheckBox();
+            this.cb_ar = new System.Windows.Forms.CheckBox();
+            this.r_a_B = new System.Windows.Forms.RadioButton();
+            this.cb_av = new System.Windows.Forms.CheckBox();
+            this.r_a_A = new System.Windows.Forms.RadioButton();
             this.panel3 = new System.Windows.Forms.Panel();
-            this.label6 = new System.Windows.Forms.Label();
+            this.cb_a = new System.Windows.Forms.CheckBox();
             this.panel4 = new System.Windows.Forms.Panel();
             this.panel7 = new System.Windows.Forms.Panel();
             this.txt_Psm = new System.Windows.Forms.TextBox();
@@ -97,9 +97,42 @@
             this.label20 = new System.Windows.Forms.Label();
             this.panel9 = new System.Windows.Forms.Panel();
             this.label24 = new System.Windows.Forms.Label();
-            this.btn_le = new System.Windows.Forms.Button();
-            this.btn_ce = new System.Windows.Forms.Button();
-            this.button1 = new System.Windows.Forms.Button();
+            this.btn_la = new System.Windows.Forms.Button();
+            this.btn_ca = new System.Windows.Forms.Button();
+            this.btn_r = new System.Windows.Forms.Button();
+            this.panel10 = new System.Windows.Forms.Panel();
+            this.cb_arm = new System.Windows.Forms.CheckBox();
+            this.panel11 = new System.Windows.Forms.Panel();
+            this.r_ar_E = new System.Windows.Forms.RadioButton();
+            this.label29 = new System.Windows.Forms.Label();
+            this.r_ar_D = new System.Windows.Forms.RadioButton();
+            this.cb_ar_m = new System.Windows.Forms.CheckBox();
+            this.cb_ar_f = new System.Windows.Forms.CheckBox();
+            this.r_ar_C = new System.Windows.Forms.RadioButton();
+            this.cb_ar_d = new System.Windows.Forms.CheckBox();
+            this.cb_ar_r = new System.Windows.Forms.CheckBox();
+            this.r_ar_B = new System.Windows.Forms.RadioButton();
+            this.cb_ar_v = new System.Windows.Forms.CheckBox();
+            this.r_ar_A = new System.Windows.Forms.RadioButton();
+            this.panel12 = new System.Windows.Forms.Panel();
+            this.label30 = new System.Windows.Forms.Label();
+            this.txt_ar_dm = new System.Windows.Forms.TextBox();
+            this.label31 = new System.Windows.Forms.Label();
+            this.txt_ar_df = new System.Windows.Forms.TextBox();
+            this.txt_ar_dfg = new System.Windows.Forms.TextBox();
+            this.txt_ar_dr = new System.Windows.Forms.TextBox();
+            this.txt_ar_dv = new System.Windows.Forms.TextBox();
+            this.label32 = new System.Windows.Forms.Label();
+            this.label33 = new System.Windows.Forms.Label();
+            this.label34 = new System.Windows.Forms.Label();
+            this.label35 = new System.Windows.Forms.Label();
+            this.panel13 = new System.Windows.Forms.Panel();
+            this.label36 = new System.Windows.Forms.Label();
+            this.btn_l_ar = new System.Windows.Forms.Button();
+            this.btn_c_ar = new System.Windows.Forms.Button();
+            this.panel14 = new System.Windows.Forms.Panel();
+            this.label37 = new System.Windows.Forms.Label();
+            this.cb_lt = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             this.panel3.SuspendLayout();
@@ -109,6 +142,11 @@
             this.panel6.SuspendLayout();
             this.panel8.SuspendLayout();
             this.panel9.SuspendLayout();
+            this.panel10.SuspendLayout();
+            this.panel11.SuspendLayout();
+            this.panel12.SuspendLayout();
+            this.panel13.SuspendLayout();
+            this.panel14.SuspendLayout();
             this.SuspendLayout();
             // 
             // cbo_dp
@@ -121,19 +159,7 @@
             resources.GetString("cbo_dp.Items1")});
             this.cbo_dp.Name = "cbo_dp";
             this.cbo_dp.ValueMember = "0";
-            this.cbo_dp.SelectedIndexChanged += new System.EventHandler(this.cbo_dp_SelectedIndexChanged);
-            // 
-            // cbo_de
-            // 
-            this.cbo_de.DisplayMember = "0";
-            this.cbo_de.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            resources.ApplyResources(this.cbo_de, "cbo_de");
-            this.cbo_de.Items.AddRange(new object[] {
-            resources.GetString("cbo_de.Items"),
-            resources.GetString("cbo_de.Items1")});
-            this.cbo_de.Name = "cbo_de";
-            this.cbo_de.ValueMember = "0";
-            this.cbo_de.SelectedIndexChanged += new System.EventHandler(this.cbo_de_SelectedIndexChanged);
+            this.cbo_dp.SelectedIndexChanged += new System.EventHandler(this.Cbo_dp_SelectedIndexChanged);
             // 
             // label2
             // 
@@ -155,35 +181,35 @@
             resources.ApplyResources(this.label4, "label4");
             this.label4.Name = "label4";
             // 
-            // txt_dv
+            // txt_adv
             // 
-            resources.ApplyResources(this.txt_dv, "txt_dv");
-            this.txt_dv.Name = "txt_dv";
+            resources.ApplyResources(this.txt_adv, "txt_adv");
+            this.txt_adv.Name = "txt_adv";
             // 
-            // txt_dr
+            // txt_adr
             // 
-            resources.ApplyResources(this.txt_dr, "txt_dr");
-            this.txt_dr.Name = "txt_dr";
+            resources.ApplyResources(this.txt_adr, "txt_adr");
+            this.txt_adr.Name = "txt_adr";
             // 
-            // txt_dfg
+            // txt_adfg
             // 
-            resources.ApplyResources(this.txt_dfg, "txt_dfg");
-            this.txt_dfg.Name = "txt_dfg";
+            resources.ApplyResources(this.txt_adfg, "txt_adfg");
+            this.txt_adfg.Name = "txt_adfg";
             // 
-            // txt_df
+            // txt_adf
             // 
-            resources.ApplyResources(this.txt_df, "txt_df");
-            this.txt_df.Name = "txt_df";
+            resources.ApplyResources(this.txt_adf, "txt_adf");
+            this.txt_adf.Name = "txt_adf";
             // 
             // panel1
             // 
-            this.panel1.Controls.Add(this.txt_dm);
+            this.panel1.Controls.Add(this.label27);
+            this.panel1.Controls.Add(this.txt_adm);
             this.panel1.Controls.Add(this.label25);
-            this.panel1.Controls.Add(this.cbo_de);
-            this.panel1.Controls.Add(this.txt_df);
-            this.panel1.Controls.Add(this.txt_dfg);
-            this.panel1.Controls.Add(this.txt_dr);
-            this.panel1.Controls.Add(this.txt_dv);
+            this.panel1.Controls.Add(this.txt_adf);
+            this.panel1.Controls.Add(this.txt_adfg);
+            this.panel1.Controls.Add(this.txt_adr);
+            this.panel1.Controls.Add(this.txt_adv);
             this.panel1.Controls.Add(this.label4);
             this.panel1.Controls.Add(this.label3);
             this.panel1.Controls.Add(this.label1);
@@ -191,10 +217,15 @@
             resources.ApplyResources(this.panel1, "panel1");
             this.panel1.Name = "panel1";
             // 
-            // txt_dm
+            // label27
             // 
-            resources.ApplyResources(this.txt_dm, "txt_dm");
-            this.txt_dm.Name = "txt_dm";
+            resources.ApplyResources(this.label27, "label27");
+            this.label27.Name = "label27";
+            // 
+            // txt_adm
+            // 
+            resources.ApplyResources(this.txt_adm, "txt_adm");
+            this.txt_adm.Name = "txt_adm";
             // 
             // label25
             // 
@@ -208,97 +239,101 @@
             // 
             // panel2
             // 
-            this.panel2.Controls.Add(this.r_E);
+            this.panel2.Controls.Add(this.r_a_E);
             this.panel2.Controls.Add(this.label8);
-            this.panel2.Controls.Add(this.r_D);
-            this.panel2.Controls.Add(this.cb_m);
-            this.panel2.Controls.Add(this.cb_f);
-            this.panel2.Controls.Add(this.r_C);
-            this.panel2.Controls.Add(this.cb_d);
-            this.panel2.Controls.Add(this.cb_r);
-            this.panel2.Controls.Add(this.r_B);
-            this.panel2.Controls.Add(this.cb_v);
-            this.panel2.Controls.Add(this.r_A);
+            this.panel2.Controls.Add(this.r_a_D);
+            this.panel2.Controls.Add(this.cb_am);
+            this.panel2.Controls.Add(this.cb_af);
+            this.panel2.Controls.Add(this.r_a_C);
+            this.panel2.Controls.Add(this.cb_ad);
+            this.panel2.Controls.Add(this.cb_ar);
+            this.panel2.Controls.Add(this.r_a_B);
+            this.panel2.Controls.Add(this.cb_av);
+            this.panel2.Controls.Add(this.r_a_A);
             resources.ApplyResources(this.panel2, "panel2");
             this.panel2.Name = "panel2";
             // 
-            // r_E
+            // r_a_E
             // 
-            resources.ApplyResources(this.r_E, "r_E");
-            this.r_E.Name = "r_E";
-            this.r_E.TabStop = true;
-            this.r_E.UseVisualStyleBackColor = true;
+            resources.ApplyResources(this.r_a_E, "r_a_E");
+            this.r_a_E.Name = "r_a_E";
+            this.r_a_E.TabStop = true;
+            this.r_a_E.UseVisualStyleBackColor = true;
             // 
-            // r_D
+            // r_a_D
             // 
-            resources.ApplyResources(this.r_D, "r_D");
-            this.r_D.Name = "r_D";
-            this.r_D.TabStop = true;
-            this.r_D.UseVisualStyleBackColor = true;
+            resources.ApplyResources(this.r_a_D, "r_a_D");
+            this.r_a_D.Name = "r_a_D";
+            this.r_a_D.TabStop = true;
+            this.r_a_D.UseVisualStyleBackColor = true;
             // 
-            // cb_m
+            // cb_am
             // 
-            resources.ApplyResources(this.cb_m, "cb_m");
-            this.cb_m.Name = "cb_m";
-            this.cb_m.UseVisualStyleBackColor = true;
+            resources.ApplyResources(this.cb_am, "cb_am");
+            this.cb_am.Name = "cb_am";
+            this.cb_am.UseVisualStyleBackColor = true;
             // 
-            // cb_f
+            // cb_af
             // 
-            resources.ApplyResources(this.cb_f, "cb_f");
-            this.cb_f.Name = "cb_f";
-            this.cb_f.UseVisualStyleBackColor = true;
+            resources.ApplyResources(this.cb_af, "cb_af");
+            this.cb_af.Name = "cb_af";
+            this.cb_af.UseVisualStyleBackColor = true;
             // 
-            // r_C
+            // r_a_C
             // 
-            resources.ApplyResources(this.r_C, "r_C");
-            this.r_C.Name = "r_C";
-            this.r_C.TabStop = true;
-            this.r_C.UseVisualStyleBackColor = true;
+            resources.ApplyResources(this.r_a_C, "r_a_C");
+            this.r_a_C.Name = "r_a_C";
+            this.r_a_C.TabStop = true;
+            this.r_a_C.UseVisualStyleBackColor = true;
             // 
-            // cb_d
+            // cb_ad
             // 
-            resources.ApplyResources(this.cb_d, "cb_d");
-            this.cb_d.Name = "cb_d";
-            this.cb_d.UseVisualStyleBackColor = true;
+            resources.ApplyResources(this.cb_ad, "cb_ad");
+            this.cb_ad.Name = "cb_ad";
+            this.cb_ad.UseVisualStyleBackColor = true;
             // 
-            // cb_r
+            // cb_ar
             // 
-            resources.ApplyResources(this.cb_r, "cb_r");
-            this.cb_r.Name = "cb_r";
-            this.cb_r.UseVisualStyleBackColor = true;
+            resources.ApplyResources(this.cb_ar, "cb_ar");
+            this.cb_ar.Name = "cb_ar";
+            this.cb_ar.UseVisualStyleBackColor = true;
             // 
-            // r_B
+            // r_a_B
             // 
-            resources.ApplyResources(this.r_B, "r_B");
-            this.r_B.Name = "r_B";
-            this.r_B.TabStop = true;
-            this.r_B.UseVisualStyleBackColor = true;
+            resources.ApplyResources(this.r_a_B, "r_a_B");
+            this.r_a_B.Name = "r_a_B";
+            this.r_a_B.TabStop = true;
+            this.r_a_B.UseVisualStyleBackColor = true;
             // 
-            // cb_v
+            // cb_av
             // 
-            resources.ApplyResources(this.cb_v, "cb_v");
-            this.cb_v.Name = "cb_v";
-            this.cb_v.UseVisualStyleBackColor = true;
+            resources.ApplyResources(this.cb_av, "cb_av");
+            this.cb_av.Name = "cb_av";
+            this.cb_av.UseVisualStyleBackColor = true;
             // 
-            // r_A
+            // r_a_A
             // 
-            resources.ApplyResources(this.r_A, "r_A");
-            this.r_A.Name = "r_A";
-            this.r_A.TabStop = true;
-            this.r_A.UseVisualStyleBackColor = true;
+            resources.ApplyResources(this.r_a_A, "r_a_A");
+            this.r_a_A.Name = "r_a_A";
+            this.r_a_A.TabStop = true;
+            this.r_a_A.UseVisualStyleBackColor = true;
             // 
             // panel3
             // 
-            this.panel3.Controls.Add(this.label6);
+            this.panel3.Controls.Add(this.cb_a);
             this.panel3.Controls.Add(this.panel2);
             this.panel3.Controls.Add(this.panel1);
             resources.ApplyResources(this.panel3, "panel3");
             this.panel3.Name = "panel3";
             // 
-            // label6
+            // cb_a
             // 
-            resources.ApplyResources(this.label6, "label6");
-            this.label6.Name = "label6";
+            resources.ApplyResources(this.cb_a, "cb_a");
+            this.cb_a.Checked = true;
+            this.cb_a.CheckState = System.Windows.Forms.CheckState.Checked;
+            this.cb_a.Name = "cb_a";
+            this.cb_a.UseVisualStyleBackColor = true;
+            this.cb_a.CheckedChanged += new System.EventHandler(this.cb_A_CheckedChanged);
             // 
             // panel4
             // 
@@ -308,7 +343,6 @@
             this.panel4.Controls.Add(this.panel6);
             resources.ApplyResources(this.panel4, "panel4");
             this.panel4.Name = "panel4";
-            this.panel4.Paint += new System.Windows.Forms.PaintEventHandler(this.panel4_Paint);
             // 
             // panel7
             // 
@@ -520,14 +554,14 @@
             resources.ApplyResources(this.btn_cp, "btn_cp");
             this.btn_cp.Name = "btn_cp";
             this.btn_cp.UseVisualStyleBackColor = true;
-            this.btn_cp.Click += new System.EventHandler(this.btn_cp_Click);
+            this.btn_cp.Click += new System.EventHandler(this.Btn_cp_Click);
             // 
             // btn_lp
             // 
             resources.ApplyResources(this.btn_lp, "btn_lp");
             this.btn_lp.Name = "btn_lp";
             this.btn_lp.UseVisualStyleBackColor = true;
-            this.btn_lp.Click += new System.EventHandler(this.btn_lp_Click);
+            this.btn_lp.Click += new System.EventHandler(this.Btn_lp_Click);
             // 
             // panel8
             // 
@@ -545,8 +579,8 @@
             // panel9
             // 
             this.panel9.Controls.Add(this.label24);
-            this.panel9.Controls.Add(this.btn_le);
-            this.panel9.Controls.Add(this.btn_ce);
+            this.panel9.Controls.Add(this.btn_la);
+            this.panel9.Controls.Add(this.btn_ca);
             resources.ApplyResources(this.panel9, "panel9");
             this.panel9.Name = "panel9";
             // 
@@ -555,36 +589,257 @@
             resources.ApplyResources(this.label24, "label24");
             this.label24.Name = "label24";
             // 
-            // btn_le
+            // btn_la
             // 
-            resources.ApplyResources(this.btn_le, "btn_le");
-            this.btn_le.Name = "btn_le";
-            this.btn_le.UseVisualStyleBackColor = true;
-            this.btn_le.Click += new System.EventHandler(this.btn_le_Click);
+            resources.ApplyResources(this.btn_la, "btn_la");
+            this.btn_la.Name = "btn_la";
+            this.btn_la.UseVisualStyleBackColor = true;
+            this.btn_la.Click += new System.EventHandler(this.Btn_la_Click);
             // 
-            // btn_ce
+            // btn_ca
             // 
-            resources.ApplyResources(this.btn_ce, "btn_ce");
-            this.btn_ce.Name = "btn_ce";
-            this.btn_ce.UseVisualStyleBackColor = true;
-            this.btn_ce.Click += new System.EventHandler(this.btn_ce_Click);
+            resources.ApplyResources(this.btn_ca, "btn_ca");
+            this.btn_ca.Name = "btn_ca";
+            this.btn_ca.UseVisualStyleBackColor = true;
+            this.btn_ca.Click += new System.EventHandler(this.Btn_ca_Click);
             // 
-            // button1
+            // btn_r
             // 
-            resources.ApplyResources(this.button1, "button1");
-            this.button1.Name = "button1";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
+            resources.ApplyResources(this.btn_r, "btn_r");
+            this.btn_r.Name = "btn_r";
+            this.btn_r.UseVisualStyleBackColor = true;
+            this.btn_r.Click += new System.EventHandler(this.Button1_Click);
+            // 
+            // panel10
+            // 
+            this.panel10.Controls.Add(this.cb_arm);
+            this.panel10.Controls.Add(this.panel11);
+            this.panel10.Controls.Add(this.panel12);
+            resources.ApplyResources(this.panel10, "panel10");
+            this.panel10.Name = "panel10";
+            // 
+            // cb_arm
+            // 
+            resources.ApplyResources(this.cb_arm, "cb_arm");
+            this.cb_arm.Checked = true;
+            this.cb_arm.CheckState = System.Windows.Forms.CheckState.Checked;
+            this.cb_arm.Name = "cb_arm";
+            this.cb_arm.UseVisualStyleBackColor = true;
+            this.cb_arm.CheckedChanged += new System.EventHandler(this.Cb_arm_CheckedChanged);
+            // 
+            // panel11
+            // 
+            this.panel11.Controls.Add(this.r_ar_E);
+            this.panel11.Controls.Add(this.label29);
+            this.panel11.Controls.Add(this.r_ar_D);
+            this.panel11.Controls.Add(this.cb_ar_m);
+            this.panel11.Controls.Add(this.cb_ar_f);
+            this.panel11.Controls.Add(this.r_ar_C);
+            this.panel11.Controls.Add(this.cb_ar_d);
+            this.panel11.Controls.Add(this.cb_ar_r);
+            this.panel11.Controls.Add(this.r_ar_B);
+            this.panel11.Controls.Add(this.cb_ar_v);
+            this.panel11.Controls.Add(this.r_ar_A);
+            resources.ApplyResources(this.panel11, "panel11");
+            this.panel11.Name = "panel11";
+            // 
+            // r_ar_E
+            // 
+            resources.ApplyResources(this.r_ar_E, "r_ar_E");
+            this.r_ar_E.Name = "r_ar_E";
+            this.r_ar_E.TabStop = true;
+            this.r_ar_E.UseVisualStyleBackColor = true;
+            // 
+            // label29
+            // 
+            resources.ApplyResources(this.label29, "label29");
+            this.label29.Name = "label29";
+            // 
+            // r_ar_D
+            // 
+            resources.ApplyResources(this.r_ar_D, "r_ar_D");
+            this.r_ar_D.Name = "r_ar_D";
+            this.r_ar_D.TabStop = true;
+            this.r_ar_D.UseVisualStyleBackColor = true;
+            // 
+            // cb_ar_m
+            // 
+            resources.ApplyResources(this.cb_ar_m, "cb_ar_m");
+            this.cb_ar_m.Name = "cb_ar_m";
+            this.cb_ar_m.UseVisualStyleBackColor = true;
+            // 
+            // cb_ar_f
+            // 
+            resources.ApplyResources(this.cb_ar_f, "cb_ar_f");
+            this.cb_ar_f.Name = "cb_ar_f";
+            this.cb_ar_f.UseVisualStyleBackColor = true;
+            // 
+            // r_ar_C
+            // 
+            resources.ApplyResources(this.r_ar_C, "r_ar_C");
+            this.r_ar_C.Name = "r_ar_C";
+            this.r_ar_C.TabStop = true;
+            this.r_ar_C.UseVisualStyleBackColor = true;
+            // 
+            // cb_ar_d
+            // 
+            resources.ApplyResources(this.cb_ar_d, "cb_ar_d");
+            this.cb_ar_d.Name = "cb_ar_d";
+            this.cb_ar_d.UseVisualStyleBackColor = true;
+            // 
+            // cb_ar_r
+            // 
+            resources.ApplyResources(this.cb_ar_r, "cb_ar_r");
+            this.cb_ar_r.Name = "cb_ar_r";
+            this.cb_ar_r.UseVisualStyleBackColor = true;
+            // 
+            // r_ar_B
+            // 
+            resources.ApplyResources(this.r_ar_B, "r_ar_B");
+            this.r_ar_B.Name = "r_ar_B";
+            this.r_ar_B.TabStop = true;
+            this.r_ar_B.UseVisualStyleBackColor = true;
+            // 
+            // cb_ar_v
+            // 
+            resources.ApplyResources(this.cb_ar_v, "cb_ar_v");
+            this.cb_ar_v.Name = "cb_ar_v";
+            this.cb_ar_v.UseVisualStyleBackColor = true;
+            // 
+            // r_ar_A
+            // 
+            resources.ApplyResources(this.r_ar_A, "r_ar_A");
+            this.r_ar_A.Name = "r_ar_A";
+            this.r_ar_A.TabStop = true;
+            this.r_ar_A.UseVisualStyleBackColor = true;
+            // 
+            // panel12
+            // 
+            this.panel12.Controls.Add(this.label30);
+            this.panel12.Controls.Add(this.txt_ar_dm);
+            this.panel12.Controls.Add(this.label31);
+            this.panel12.Controls.Add(this.txt_ar_df);
+            this.panel12.Controls.Add(this.txt_ar_dfg);
+            this.panel12.Controls.Add(this.txt_ar_dr);
+            this.panel12.Controls.Add(this.txt_ar_dv);
+            this.panel12.Controls.Add(this.label32);
+            this.panel12.Controls.Add(this.label33);
+            this.panel12.Controls.Add(this.label34);
+            this.panel12.Controls.Add(this.label35);
+            resources.ApplyResources(this.panel12, "panel12");
+            this.panel12.Name = "panel12";
+            // 
+            // label30
+            // 
+            resources.ApplyResources(this.label30, "label30");
+            this.label30.Name = "label30";
+            // 
+            // txt_ar_dm
+            // 
+            resources.ApplyResources(this.txt_ar_dm, "txt_ar_dm");
+            this.txt_ar_dm.Name = "txt_ar_dm";
+            // 
+            // label31
+            // 
+            resources.ApplyResources(this.label31, "label31");
+            this.label31.Name = "label31";
+            // 
+            // txt_ar_df
+            // 
+            resources.ApplyResources(this.txt_ar_df, "txt_ar_df");
+            this.txt_ar_df.Name = "txt_ar_df";
+            // 
+            // txt_ar_dfg
+            // 
+            resources.ApplyResources(this.txt_ar_dfg, "txt_ar_dfg");
+            this.txt_ar_dfg.Name = "txt_ar_dfg";
+            // 
+            // txt_ar_dr
+            // 
+            resources.ApplyResources(this.txt_ar_dr, "txt_ar_dr");
+            this.txt_ar_dr.Name = "txt_ar_dr";
+            // 
+            // txt_ar_dv
+            // 
+            resources.ApplyResources(this.txt_ar_dv, "txt_ar_dv");
+            this.txt_ar_dv.Name = "txt_ar_dv";
+            // 
+            // label32
+            // 
+            resources.ApplyResources(this.label32, "label32");
+            this.label32.Name = "label32";
+            // 
+            // label33
+            // 
+            resources.ApplyResources(this.label33, "label33");
+            this.label33.Name = "label33";
+            // 
+            // label34
+            // 
+            resources.ApplyResources(this.label34, "label34");
+            this.label34.Name = "label34";
+            // 
+            // label35
+            // 
+            resources.ApplyResources(this.label35, "label35");
+            this.label35.Name = "label35";
+            // 
+            // panel13
+            // 
+            this.panel13.Controls.Add(this.label36);
+            this.panel13.Controls.Add(this.btn_l_ar);
+            this.panel13.Controls.Add(this.btn_c_ar);
+            resources.ApplyResources(this.panel13, "panel13");
+            this.panel13.Name = "panel13";
+            // 
+            // label36
+            // 
+            resources.ApplyResources(this.label36, "label36");
+            this.label36.Name = "label36";
+            // 
+            // btn_l_ar
+            // 
+            resources.ApplyResources(this.btn_l_ar, "btn_l_ar");
+            this.btn_l_ar.Name = "btn_l_ar";
+            this.btn_l_ar.UseVisualStyleBackColor = true;
+            // 
+            // btn_c_ar
+            // 
+            resources.ApplyResources(this.btn_c_ar, "btn_c_ar");
+            this.btn_c_ar.Name = "btn_c_ar";
+            this.btn_c_ar.UseVisualStyleBackColor = true;
+            this.btn_c_ar.Click += new System.EventHandler(this.Btn_c_ar_Click);
+            // 
+            // panel14
+            // 
+            this.panel14.Controls.Add(this.label37);
+            this.panel14.Controls.Add(this.cb_lt);
+            this.panel14.Controls.Add(this.btn_r);
+            resources.ApplyResources(this.panel14, "panel14");
+            this.panel14.Name = "panel14";
+            // 
+            // label37
+            // 
+            resources.ApplyResources(this.label37, "label37");
+            this.label37.Name = "label37";
+            // 
+            // cb_lt
+            // 
+            resources.ApplyResources(this.cb_lt, "cb_lt");
+            this.cb_lt.Name = "cb_lt";
+            this.cb_lt.UseVisualStyleBackColor = true;
             // 
             // Form1
             // 
             resources.ApplyResources(this, "$this");
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.Controls.Add(this.button1);
+            this.Controls.Add(this.panel13);
+            this.Controls.Add(this.panel10);
             this.Controls.Add(this.panel9);
             this.Controls.Add(this.panel4);
             this.Controls.Add(this.panel3);
             this.Controls.Add(this.panel8);
+            this.Controls.Add(this.panel14);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
             this.MaximizeBox = false;
             this.Name = "Form1";
@@ -607,6 +862,16 @@
             this.panel8.PerformLayout();
             this.panel9.ResumeLayout(false);
             this.panel9.PerformLayout();
+            this.panel10.ResumeLayout(false);
+            this.panel10.PerformLayout();
+            this.panel11.ResumeLayout(false);
+            this.panel11.PerformLayout();
+            this.panel12.ResumeLayout(false);
+            this.panel12.PerformLayout();
+            this.panel13.ResumeLayout(false);
+            this.panel13.PerformLayout();
+            this.panel14.ResumeLayout(false);
+            this.panel14.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -617,20 +882,19 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.TextBox txt_dv;
-        private System.Windows.Forms.TextBox txt_dr;
-        private System.Windows.Forms.TextBox txt_dfg;
-        private System.Windows.Forms.TextBox txt_df;
+        private System.Windows.Forms.TextBox txt_adv;
+        private System.Windows.Forms.TextBox txt_adr;
+        private System.Windows.Forms.TextBox txt_adfg;
+        private System.Windows.Forms.TextBox txt_adf;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.Panel panel2;
-        private System.Windows.Forms.RadioButton r_A;
-        private System.Windows.Forms.RadioButton r_B;
-        private System.Windows.Forms.RadioButton r_C;
-        private System.Windows.Forms.RadioButton r_E;
-        private System.Windows.Forms.RadioButton r_D;
+        private System.Windows.Forms.RadioButton r_a_A;
+        private System.Windows.Forms.RadioButton r_a_B;
+        private System.Windows.Forms.RadioButton r_a_C;
+        private System.Windows.Forms.RadioButton r_a_E;
+        private System.Windows.Forms.RadioButton r_a_D;
         private System.Windows.Forms.Panel panel3;
-        private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Panel panel4;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Panel panel6;
@@ -665,25 +929,59 @@
         private System.Windows.Forms.Label label20;
         private System.Windows.Forms.Panel panel9;
         private System.Windows.Forms.Label label24;
-        private System.Windows.Forms.Button btn_le;
-        private System.Windows.Forms.Button btn_ce;
+        private System.Windows.Forms.Button btn_la;
+        private System.Windows.Forms.Button btn_ca;
         private System.Windows.Forms.ComboBox cbo_dp;
-        private System.Windows.Forms.ComboBox cbo_de;
-        private System.Windows.Forms.CheckBox cb_r;
-        private System.Windows.Forms.CheckBox cb_v;
-        private System.Windows.Forms.CheckBox cb_d;
-        private System.Windows.Forms.CheckBox cb_f;
-        private System.Windows.Forms.TextBox txt_dm;
+        private System.Windows.Forms.CheckBox cb_ar;
+        private System.Windows.Forms.CheckBox cb_av;
+        private System.Windows.Forms.CheckBox cb_ad;
+        private System.Windows.Forms.CheckBox cb_af;
+        private System.Windows.Forms.TextBox txt_adm;
         private System.Windows.Forms.Label label25;
-        private System.Windows.Forms.CheckBox cb_m;
+        private System.Windows.Forms.CheckBox cb_am;
         private System.Windows.Forms.TextBox txt_PM;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.TextBox txt_PV;
         private System.Windows.Forms.TextBox txt_Pdm;
         private System.Windows.Forms.Label label10;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button btn_r;
         private System.Windows.Forms.TextBox txt_Psm;
         private System.Windows.Forms.Label label26;
+        private System.Windows.Forms.Label label27;
+        private System.Windows.Forms.Panel panel10;
+        private System.Windows.Forms.Panel panel11;
+        private System.Windows.Forms.RadioButton r_ar_E;
+        private System.Windows.Forms.Label label29;
+        private System.Windows.Forms.RadioButton r_ar_D;
+        private System.Windows.Forms.CheckBox cb_ar_m;
+        private System.Windows.Forms.CheckBox cb_ar_f;
+        private System.Windows.Forms.RadioButton r_ar_C;
+        private System.Windows.Forms.CheckBox cb_ar_d;
+        private System.Windows.Forms.CheckBox cb_ar_r;
+        private System.Windows.Forms.RadioButton r_ar_B;
+        private System.Windows.Forms.CheckBox cb_ar_v;
+        private System.Windows.Forms.RadioButton r_ar_A;
+        private System.Windows.Forms.Panel panel12;
+        private System.Windows.Forms.Label label30;
+        private System.Windows.Forms.TextBox txt_ar_dm;
+        private System.Windows.Forms.Label label31;
+        private System.Windows.Forms.TextBox txt_ar_df;
+        private System.Windows.Forms.TextBox txt_ar_dfg;
+        private System.Windows.Forms.TextBox txt_ar_dr;
+        private System.Windows.Forms.TextBox txt_ar_dv;
+        private System.Windows.Forms.Label label32;
+        private System.Windows.Forms.Label label33;
+        private System.Windows.Forms.Label label34;
+        private System.Windows.Forms.Label label35;
+        private System.Windows.Forms.Panel panel13;
+        private System.Windows.Forms.Label label36;
+        private System.Windows.Forms.Button btn_l_ar;
+        private System.Windows.Forms.Button btn_c_ar;
+        private System.Windows.Forms.Panel panel14;
+        private System.Windows.Forms.Button cb_lt;
+        private System.Windows.Forms.Label label37;
+        private System.Windows.Forms.CheckBox cb_a;
+        private System.Windows.Forms.CheckBox cb_arm;
     }
 }
 
