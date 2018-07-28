@@ -42,14 +42,14 @@
     </dependentAssembly>
   </dependency>
   <dependency>
-    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="Calculador De Dano E Defesa.exe" size="269304">
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="Calculador De Dano E Defesa.exe" size="358392">
       <assemblyIdentity name="Calculador De Dano E Defesa" version="1.0.0.0" language="neutral" processorArchitecture="msil" />
       <hash>
         <dsig:Transforms>
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-        <dsig:DigestValue>FvjEwHbBNzKQI1lqWHSnEkoJeGNt3suG6YLM4ZE5GD4=</dsig:DigestValue>
+        <dsig:DigestValue>ZUOSmZ4tcaKev2BgfUNAZCzIlxBvR+dJvX9fHu93sGg=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>
@@ -61,7 +61,7 @@
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-        <dsig:DigestValue>LkX68cXufS22VUyyI734LndB8BOLi65+z0xk4SKs/aA=</dsig:DigestValue>
+        <dsig:DigestValue>r7rRA6ZRD+eox6Wob7e5tL6ZS7b/RHK1KmsRCJG0tyc=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>

@@ -333,7 +333,7 @@
             this.cb_a.CheckState = System.Windows.Forms.CheckState.Checked;
             this.cb_a.Name = "cb_a";
             this.cb_a.UseVisualStyleBackColor = true;
-            this.cb_a.CheckedChanged += new System.EventHandler(this.cb_A_CheckedChanged);
+            this.cb_a.CheckedChanged += new System.EventHandler(this.Cb_A_CheckedChanged);
             // 
             // panel4
             // 
@@ -802,6 +802,7 @@
             resources.ApplyResources(this.btn_l_ar, "btn_l_ar");
             this.btn_l_ar.Name = "btn_l_ar";
             this.btn_l_ar.UseVisualStyleBackColor = true;
+            this.btn_l_ar.Click += new System.EventHandler(this.Btn_l_ar_Click);
             // 
             // btn_c_ar
             // 

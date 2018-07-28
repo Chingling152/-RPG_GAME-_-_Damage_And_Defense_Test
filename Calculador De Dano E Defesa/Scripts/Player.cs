@@ -19,18 +19,105 @@ namespace Calculador_De_Dano_E_Defesa.Scripts
         public Arma arma;
 
         //com influencias (DANO)
-        public float DanoFisico {get {return Influencias(danofisico, arma);}}
-        public float DanoFogo { get { return Influencias(danofogo, arma);} }        
-        public float DanoRaio { get { return Influencias(danoraio, arma);} }       
-        public float DanoVeneno { get { return Influencias(danoveneno, arma);} }
-        public float DanoMagico { get { return Influencias(danomagico, arma);} }
+        public float DanoFisico {
+            get {
+                if(arma != null) {
+                    return Influencias(danofisico, arma,arma.dfisico);
+                }else{
+                    return danofisico;
+                }
+            }
+        }
+        public float DanoFogo {
+            get {
+                if (arma != null) {
+                    return Influencias(danofogo, arma, arma.dfogo);
+                }
+                else {
+                    return danofogo;
+                }
+            }
+        }        
+        public float DanoRaio {
+            get {
+                if (arma != null){
+                    return Influencias(danoraio, arma,arma.draio);
+                }else{
+                    return danoraio;
+                }
+            }
+        }           
+        public float DanoVeneno {
+            get {
+                if(arma != null) { 
+                    return Influencias(danoveneno, arma,arma.dveneno);
+                }
+                else {
+                    return danoveneno;
+                }
+            }
+        }
+        public float DanoMagico {
+            get {
+                if (arma != null){
+                    return Influencias(danomagico, arma,arma.dmagico);
+                }
+                else {
+                    return danomagico;
+                }
+            }
+        }
 
         //com influencias (Defesa)
-        public float DefesaFisica { get { return Influencias(defesafisica, armadura); } }
-        public float DefesaFogo { get { return Influencias(defesafogo, armadura); } }
-        public float DefesaRaio { get { return Influencias(defesaraio, armadura); } }
-        public float DefesaVeneno { get { return Influencias(defesaveneno, armadura); } }
-        public float DefesaMagica { get { return Influencias(defesamagica, armadura); } }
+        public float DefesaFisica {
+            get {
+                if (armadura != null){
+                    return Influencias(defesafisica, armadura , armadura.dfisico);
+                }
+                else {
+                    return defesafisica;
+                }
+            }
+        }
+        public float DefesaFogo {
+            get {
+                if (armadura != null){
+                    return Influencias(defesafogo, armadura , armadura.dfogo);
+                }
+                else{
+                    return defesafogo;
+                }
+            }
+        }
+        public float DefesaRaio {
+            get {
+                if (armadura != null){
+                    return Influencias(defesaraio, armadura , armadura.draio);
+                }else {
+                    return defesaraio;
+                }
+            }
+        }
+        public float DefesaVeneno {
+            get {
+                if (armadura != null){
+                    return Influencias(defesaveneno, armadura , armadura.dveneno);
+                }
+                else {
+                    return defesaveneno;
+                }
+            }
+        }
+        public float DefesaMagica {
+            get {
+                if (armadura != null){
+                    return Influencias(defesamagica, armadura , armadura.dmagico);
+                }
+                else {
+                    return defesamagica;
+                }
+            }
+        }
 
         public Player(int forca, int destreza, int resistencia, int vigor,int magia,string tipo)
         {
@@ -49,47 +136,55 @@ namespace Calculador_De_Dano_E_Defesa.Scripts
             pesomax = (12 * 1) * (resistencia * 0.10f);
             slotsmagia = (int)Math.Floor((float)magia * 0.10f);
 
-            danofisico = (1 * (forca * destreza - (magia * 0.025f)) * 0.05f);//FIX THAT
+            danofisico = 
+                (1 * (forca * destreza - (magia * 0.025f)) * 0.05f) >= 0.0f? 
+                (1 * (forca * destreza - (magia * 0.025f)) * 0.05f) : 0.0f ;
             danofogo = 0;
             danoraio = 0;
             danoveneno = 0;
             danomagico = 0;
 
-            defesafisica = (1 * (resistencia * vigor - (magia * 0.025f)) * 0.05f);
-            defesaraio = (1 * (resistencia * magia) * 0.0025f);
-            defesafogo = (1 * (resistencia * vigor) * 0.0025f);
+            defesafisica = 
+                (1 * (resistencia * vigor *0.5f) - (magia * 0.05f)) >= 0.0f ?
+                (1 * (resistencia * vigor * 0.5f) - (magia * 0.05f)) : 0.0f;
+            defesaraio = (1 * (resistencia * magia) * 0.25f);
+            defesafogo = (1 * (resistencia * vigor) * 0.25f);
             defesaveneno = (1 * (vigor * 0.25f));
-            defesamagica = (1 * (magia * 0.05f - ((vigor + resistencia) * 0.025f)));
+            defesamagica = 
+                (1 * (magia * 0.5f) - ((vigor + resistencia) * 0.05f)) >= 0.0f?
+                (1 * (magia * 0.5f) - ((vigor + resistencia) * 0.05f)) : 0.0f;
         }
         
-        //influencia do equipamento (fixar?)
-        public float Influencias(float n, Equipamento equip){
-            foreach (Influencia item in equip.influencia)
-            {
-                switch (item)
+        //influencia do equipamento (fixar?) 
+        // X =  DMG\DEF = Y = EQUIP.DMG\DEF
+        public float Influencias(float x, Equipamento equip,float y){
+                foreach (Influencia item in equip.influencia)
                 {
-                    case Influencia.Forca:
-                        n = n * ((float)forca* ((float)equip.classe) * 0.10f);
-                        break;
-                    case Influencia.Destreza:
-                        n = n * ((float)destreza * ((float)equip.classe) * 0.10f);
-                        break;
-                    case Influencia.Resistencia:
-                        n = n * ((float)resistencia * ((float)equip.classe) * 0.10f);
-                        break;
-                    case Influencia.Vigor:
-                        n = n * ((float)vigor * ((float)equip.classe) * 0.10f);
-                        break;
-                    case Influencia.Magia:
-                        n = n * ((float)magia * ((float)equip.classe) * 0.10f);
-                        break;
-                    case Influencia.Nada:  
-                        return n * 0.10f;
-                    default:
-                        break;
+                    switch (item)
+                    {
+                        case Influencia.Forca:
+                            x = x + ( (float)forca *  y) * ( (float)equip.classe * 0.10f);
+                          //x = 100 + ( (100 * 100) * (5/10))) = 5100 
+                            break;
+                        case Influencia.Destreza:
+                            x = x + ( (float)destreza * y) * ( (float)equip.classe * 0.10f);
+                            break;
+                        case Influencia.Resistencia:
+                            x = x + ((float)resistencia * y) * ( (float)equip.classe * 0.10f);
+                            break;
+                        case Influencia.Vigor:
+                            x = x + ((float)vigor * y) * ( (float)equip.classe * 0.10f);
+                            break;
+                        case Influencia.Magia:
+                            x = x + ((float)magia * y) * ( (float)equip.classe * 0.10f);
+                            break;
+                        case Influencia.Nada:  
+                            return x + y;//( y * ((float)equip.classe * 0.10f));
+                        default:
+                            break;
+                    }
                 }
-            }         
-            return n / equip.influencia.Count;
+                return x / equip.influencia.Count;
         }
     }
 }

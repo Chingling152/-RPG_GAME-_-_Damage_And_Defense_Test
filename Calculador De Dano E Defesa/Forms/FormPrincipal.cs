@@ -18,7 +18,7 @@ namespace Calculador_De_Dano_E_Defesa
         /// /// Equipamento ///
         /// r_A , r_b , r_c , r_D , r_E = nivel de influencia
         /// influences = influencias
-        /// txt_df , txt_dfg , txt_dr , txt_dv = dano\defesa fisic@ , raio , veneno fogo , veneno
+        /// txt_a_df , txt_a_dfg , txt_a_dr , txt_a_dv = dano fisico , raio , veneno fogo , veneno
         /// /// Player ///
         /// txt_Pf , txt_pd , txt_Pv , txt_Pr = força vigor , destreza e resistencia
         /// txt_Pdf , txt_Pdfg , txt_Pdr , txt_Pdv = dano\defesa fisic@ , raio , veneno fogo , veneno
@@ -48,14 +48,12 @@ namespace Calculador_De_Dano_E_Defesa
         //criar player
         private void Btn_cp_Click(object sender, EventArgs e){
             try { 
-                //Skills
-                int forca, destreza, vigor, resistencia,magia;
-                    //Buscando nas textboxes
-                int.TryParse(txt_PF.Text , out forca);
-                int.TryParse(txt_PD.Text, out destreza);
-                int.TryParse(txt_PR.Text, out resistencia);
-                int.TryParse(txt_PV.Text, out vigor);     
-                int.TryParse(txt_PM.Text, out magia);
+                //Buscando nas textboxes
+                int.TryParse(txt_PF.Text , out int forca);
+                int.TryParse(txt_PD.Text, out int destreza);
+                int.TryParse(txt_PR.Text, out int resistencia);
+                int.TryParse(txt_PV.Text, out int vigor);     
+                int.TryParse(txt_PM.Text, out int magia);
                     //Verificação (Para nunca ser 0 ou menor)
                 if(forca <= 0) {forca = 1; txt_PF.Text = forca.ToString(); }
                 if(destreza <= 0) { destreza = 1; txt_PD.Text = destreza.ToString(); }
@@ -120,6 +118,7 @@ namespace Calculador_De_Dano_E_Defesa
             txt_Pdv.Clear();
             txt_Pdm.Clear();
         }
+
         //mudança do combo box (player)
         private void Cbo_dp_SelectedIndexChanged(object sender, EventArgs e)
         {
@@ -156,8 +155,8 @@ namespace Calculador_De_Dano_E_Defesa
             txt_Psm.Text = player.slotsmagia.ToString();
         }
 
-        //Ativar armadura
-        private void cb_A_CheckedChanged(object sender, EventArgs e)
+        //Ativar arma
+        private void Cb_A_CheckedChanged(object sender, EventArgs e)
         {
 
             if (!cb_a.Checked)
@@ -186,8 +185,6 @@ namespace Calculador_De_Dano_E_Defesa
 
                 btn_ca.Enabled = false;
                 btn_la.Enabled = false;
-
-                arma = null;
             }
             else
             {
@@ -213,7 +210,6 @@ namespace Calculador_De_Dano_E_Defesa
                 btn_la.Enabled = true;
             }
         }
-
         //criar arma
         private void Btn_ca_Click(object sender, EventArgs e)
         {
@@ -302,7 +298,6 @@ namespace Calculador_De_Dano_E_Defesa
                 MessageBox.Show("Primeiro Crie o Player","Exceção",MessageBoxButtons.OK,MessageBoxIcon.Exclamation);
             }
         }
-
         //Limpar arma
         private void Btn_la_Click(object sender, EventArgs e)
         {
@@ -330,7 +325,6 @@ namespace Calculador_De_Dano_E_Defesa
 
             btn_ca.Enabled = true;
         }
-
         //Limpar campos (Arma)
         void LimparArma() {
             txt_adf.Clear();
@@ -347,8 +341,6 @@ namespace Calculador_De_Dano_E_Defesa
 
             r_a_A.Select();
             r_a_A.Checked = false;
-
-            arma = null;
         }
 
         //Criar armadura
@@ -373,7 +365,7 @@ namespace Calculador_De_Dano_E_Defesa
                         cb_ar_v,
                         cb_ar_m
                     };
-
+                    //arrume isso
                     Classe classe =
                         r_ar_A.Checked ? Classe.A :
                         r_ar_B.Checked ? Classe.B :
@@ -384,7 +376,7 @@ namespace Calculador_De_Dano_E_Defesa
 
                     if (classe.Equals(Classe.E) && !r_ar_E.Checked)
                     {
-                        r_a_E.Select();
+                        r_ar_E.Select();
                     }
 
                     for (int i = 0; i < check.Length; i++)
@@ -406,11 +398,11 @@ namespace Calculador_De_Dano_E_Defesa
                     float.TryParse(txt_ar_dv.Text, out float defesaveneno);
                     float.TryParse(txt_ar_dm.Text, out float defesamagica);
 
-                    if (defesafisica <= 0) { defesafisica = 0; txt_adf.Text = defesafisica.ToString(); }
-                    if (defesaraio <= 0) { defesaraio = 0; txt_adr.Text = defesaraio.ToString(); }
-                    if (defesafogo <= 0) { defesafogo = 0; txt_adfg.Text = defesafogo.ToString(); }
-                    if (defesaveneno <= 0) { defesaveneno = 0; txt_adv.Text = defesaveneno.ToString(); }
-                    if (defesamagica <= 0) { defesamagica = 0; txt_adm.Text = defesamagica.ToString(); }
+                    if (defesafisica <= 0) { defesafisica = 0; txt_ar_df.Text = defesafisica.ToString(); }
+                    if (defesaraio <= 0) { defesaraio = 0; txt_ar_dr.Text = defesaraio.ToString(); }
+                    if (defesafogo <= 0) { defesafogo = 0; txt_ar_dfg.Text = defesafogo.ToString(); }
+                    if (defesaveneno <= 0) { defesaveneno = 0; txt_ar_dv.Text = defesaveneno.ToString(); }
+                    if (defesamagica <= 0) { defesamagica = 0; txt_ar_dm.Text = defesamagica.ToString(); }
 
                     //atualizar equipamento.influencias depois de criar
 
@@ -446,14 +438,58 @@ namespace Calculador_De_Dano_E_Defesa
                 MessageBox.Show("Primeiro Crie o Player", "Exceção", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
             }       
         }
+        //Limpar armadura
+        private void Btn_l_ar_Click(object sender, EventArgs e)
+        {
+            //Limpar campos
+            LimparArmadura();
 
+            //ativar campos
+            txt_ar_df.Enabled = true;
+            txt_ar_dfg.Enabled = true;
+            txt_ar_dv.Enabled = true;
+            txt_ar_dr.Enabled = true;
+            txt_ar_dm.Enabled = true;
+
+            cb_ar_f.Enabled = true;
+            cb_ar_d.Enabled = true;
+            cb_ar_r.Enabled = true;
+            cb_ar_v.Enabled = true;
+            cb_ar_m.Enabled = true;
+
+            r_ar_A.Enabled = true;
+            r_ar_B.Enabled = true;
+            r_ar_C.Enabled = true;
+            r_ar_D.Enabled = true;
+            r_ar_E.Enabled = true;
+
+            btn_ca.Enabled = true;
+        }
+        //Limpar campos (armadura)
+        void LimparArmadura()
+        {
+            txt_ar_df.Clear();
+            txt_ar_dfg.Clear();
+            txt_ar_dv.Clear();
+            txt_ar_dr.Clear();
+            txt_ar_dm.Clear();
+
+            cb_ar_f.Checked = false;
+            cb_ar_d.Checked = false;
+            cb_ar_r.Checked = false;
+            cb_ar_v.Checked = false;
+            cb_ar_m.Checked = false;
+
+            r_ar_A.Select();
+            r_ar_A.Checked = false;
+        }
         //Ativar armadura
         private void Cb_arm_CheckedChanged(object sender, EventArgs e)
         {
             if (!cb_arm.Checked)
             {
                 //Limpar campos
-                LimparArma();
+                LimparArmadura();
 
                 //desabilitar campos
                 txt_ar_df.Enabled = false;
@@ -476,11 +512,9 @@ namespace Calculador_De_Dano_E_Defesa
 
                 btn_c_ar.Enabled = false;
                 btn_l_ar.Enabled = false;
-
-                armadura = null;
             }
             else {
-                //desabilitar campos
+                //habilitar campos
                 txt_ar_df.Enabled = true;
                 txt_ar_dfg.Enabled = true;
                 txt_ar_dv.Enabled = true;
@@ -508,13 +542,16 @@ namespace Calculador_De_Dano_E_Defesa
         //RESULTADO
         private void Button1_Click(object sender, EventArgs e)
         {
-            if(player != null) {
-                if (arma != null || armadura != null) {
-                        Resultado r = new Resultado(this.arma,this.armadura,this.player);
-                        r.ShowDialog();
+            if (!cb_a.Checked) { arma = null;}
+            if (!cb_arm.Checked) { armadura = null;}
+
+            if (player != null) {
+                if (arma == null && armadura == null) {
+                    MessageBox.Show("O Player não pode ser instanciado sem equipamento!!", "Erro");                  
                 }
                 else {
-                    MessageBox.Show("O Player não pode ser instanciado sem equipamento!!");
+                    Resultado r = new Resultado(this.arma, this.armadura, this.player);
+                    r.ShowDialog();
                 }
             }
             else {
