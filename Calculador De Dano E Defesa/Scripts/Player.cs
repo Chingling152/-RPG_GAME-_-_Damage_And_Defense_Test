@@ -145,14 +145,14 @@ namespace Calculador_De_Dano_E_Defesa.Scripts
             danomagico = 0;
 
             defesafisica = 
-                (1 * (resistencia * vigor *0.5f) - (magia * 0.05f)) >= 0.0f ?
-                (1 * (resistencia * vigor * 0.5f) - (magia * 0.05f)) : 0.0f;
-            defesaraio = (1 * (resistencia * magia) * 0.25f);
-            defesafogo = (1 * (resistencia * vigor) * 0.25f);
-            defesaveneno = (1 * (vigor * 0.25f));
+                (1 * (resistencia * vigor *0.05f) - (magia * 0.05f)) >= 0.0f ?
+                (1 * (resistencia * vigor * 0.05f) - (magia * 0.05f)) : 0.0f;
+            defesaraio = (1 * (resistencia * magia) * 0.025f);
+            defesafogo = (1 * (resistencia * vigor) * 0.025f);
+            defesaveneno = (1 * (vigor * vigor) * 0.0125f);
             defesamagica = 
-                (1 * (magia * 0.5f) - ((vigor + resistencia) * 0.05f)) >= 0.0f?
-                (1 * (magia * 0.5f) - ((vigor + resistencia) * 0.05f)) : 0.0f;
+                (1 * (magia * magia * 0.0125f) - ((vigor + resistencia) * 0.025f)) >= 0.0f?
+                (1 * (magia * magia * 0.0125f) - ((vigor + resistencia) * 0.025f)) : 0.0f;
         }
         
         //influencia do equipamento (fixar?) 
