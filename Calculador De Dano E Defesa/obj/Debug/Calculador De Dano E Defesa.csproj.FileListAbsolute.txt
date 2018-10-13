@@ -1,0 +1,38 @@
+C:\Users\debaal\source\repos\Calculador De Dano E Defesa\Calculador De Dano E Defesa\bin\Debug\Calculador De Dano E Defesa.exe.config
+C:\Users\debaal\source\repos\Calculador De Dano E Defesa\Calculador De Dano E Defesa\bin\Debug\Calculador De Dano E Defesa.exe
+C:\Users\debaal\source\repos\Calculador De Dano E Defesa\Calculador De Dano E Defesa\bin\Debug\Calculador De Dano E Defesa.pdb
+C:\Users\debaal\source\repos\Calculador De Dano E Defesa\Calculador De Dano E Defesa\obj\Debug\Calculador De Dano E Defesa.csprojResolveAssemblyReference.cache
+C:\Users\debaal\source\repos\Calculador De Dano E Defesa\Calculador De Dano E Defesa\obj\Debug\Calculador_De_Dano_E_Defesa.Form1.resources
+C:\Users\debaal\source\repos\Calculador De Dano E Defesa\Calculador De Dano E Defesa\obj\Debug\Calculador_De_Dano_E_Defesa.Properties.Resources.resources
+C:\Users\debaal\source\repos\Calculador De Dano E Defesa\Calculador De Dano E Defesa\obj\Debug\Calculador De Dano E Defesa.csproj.GenerateResource.Cache
+C:\Users\debaal\source\repos\Calculador De Dano E Defesa\Calculador De Dano E Defesa\obj\Debug\Calculador De Dano E Defesa.csproj.CoreCompileInputs.cache
+C:\Users\debaal\source\repos\Calculador De Dano E Defesa\Calculador De Dano E Defesa\obj\Debug\Calculador De Dano E Defesa.exe
+C:\Users\debaal\source\repos\Calculador De Dano E Defesa\Calculador De Dano E Defesa\obj\Debug\Calculador De Dano E Defesa.pdb
+C:\Users\debaal\source\repos\Calculador De Dano E Defesa\Calculador De Dano E Defesa\obj\Debug\Calculador_De_Dano_E_Defesa.Forms.Resultado.resources
+C:\Users\debaal\source\repos\Calculador De Dano E Defesa\Calculador De Dano E Defesa\bin\Debug\pt-BR\Calculador De Dano E Defesa.resources.dll
+C:\Users\debaal\source\repos\Calculador De Dano E Defesa\Calculador De Dano E Defesa\obj\Debug\Calculador_De_Dano_E_Defesa.Form1.pt-BR.resources
+C:\Users\debaal\source\repos\Calculador De Dano E Defesa\Calculador De Dano E Defesa\obj\Debug\Calculador_De_Dano_E_Defesa.Forms.Resultado.pt-BR.resources
+C:\Users\debaal\source\repos\Calculador De Dano E Defesa\Calculador De Dano E Defesa\obj\Debug\pt-BR\Calculador De Dano E Defesa.resources.dll
+C:\Users\debaal\source\repos\Calculador De Dano E Defesa\Calculador De Dano E Defesa\bin\Debug\Calculador De Dano E Defesa.exe.manifest
+C:\Users\debaal\source\repos\Calculador De Dano E Defesa\Calculador De Dano E Defesa\bin\Debug\Calculador De Dano E Defesa.application
+C:\Users\debaal\source\repos\Calculador De Dano E Defesa\Calculador De Dano E Defesa\obj\Debug\Calculador De Dano E Defesa.exe.manifest
+C:\Users\debaal\source\repos\Calculador De Dano E Defesa\Calculador De Dano E Defesa\obj\Debug\Calculador De Dano E Defesa.application
+F:\o\Jogos\Outros\Meus Projetos\Calculador De Dano E Defesa\Calculador De Dano E Defesa\bin\Debug\Calculador De Dano E Defesa.exe.config
+F:\o\Jogos\Outros\Meus Projetos\Calculador De Dano E Defesa\Calculador De Dano E Defesa\bin\Debug\Calculador De Dano E Defesa.exe.manifest
+F:\o\Jogos\Outros\Meus Projetos\Calculador De Dano E Defesa\Calculador De Dano E Defesa\bin\Debug\Calculador De Dano E Defesa.application
+F:\o\Jogos\Outros\Meus Projetos\Calculador De Dano E Defesa\Calculador De Dano E Defesa\bin\Debug\Calculador De Dano E Defesa.exe
+F:\o\Jogos\Outros\Meus Projetos\Calculador De Dano E Defesa\Calculador De Dano E Defesa\bin\Debug\Calculador De Dano E Defesa.pdb
+F:\o\Jogos\Outros\Meus Projetos\Calculador De Dano E Defesa\Calculador De Dano E Defesa\bin\Debug\pt-BR\Calculador De Dano E Defesa.resources.dll
+F:\o\Jogos\Outros\Meus Projetos\Calculador De Dano E Defesa\Calculador De Dano E Defesa\obj\Debug\Calculador De Dano E Defesa.csprojResolveAssemblyReference.cache
+F:\o\Jogos\Outros\Meus Projetos\Calculador De Dano E Defesa\Calculador De Dano E Defesa\obj\Debug\Calculador_De_Dano_E_Defesa.Form1.resources
+F:\o\Jogos\Outros\Meus Projetos\Calculador De Dano E Defesa\Calculador De Dano E Defesa\obj\Debug\Calculador_De_Dano_E_Defesa.Forms.Resultado.resources
+F:\o\Jogos\Outros\Meus Projetos\Calculador De Dano E Defesa\Calculador De Dano E Defesa\obj\Debug\Calculador_De_Dano_E_Defesa.Properties.Resources.resources
+F:\o\Jogos\Outros\Meus Projetos\Calculador De Dano E Defesa\Calculador De Dano E Defesa\obj\Debug\Calculador_De_Dano_E_Defesa.Form1.pt-BR.resources
+F:\o\Jogos\Outros\Meus Projetos\Calculador De Dano E Defesa\Calculador De Dano E Defesa\obj\Debug\Calculador_De_Dano_E_Defesa.Forms.Resultado.pt-BR.resources
+F:\o\Jogos\Outros\Meus Projetos\Calculador De Dano E Defesa\Calculador De Dano E Defesa\obj\Debug\Calculador De Dano E Defesa.csproj.GenerateResource.Cache
+F:\o\Jogos\Outros\Meus Projetos\Calculador De Dano E Defesa\Calculador De Dano E Defesa\obj\Debug\Calculador De Dano E Defesa.csproj.CoreCompileInputs.cache
+F:\o\Jogos\Outros\Meus Projetos\Calculador De Dano E Defesa\Calculador De Dano E Defesa\obj\Debug\pt-BR\Calculador De Dano E Defesa.resources.dll
+F:\o\Jogos\Outros\Meus Projetos\Calculador De Dano E Defesa\Calculador De Dano E Defesa\obj\Debug\Calculador De Dano E Defesa.exe.manifest
+F:\o\Jogos\Outros\Meus Projetos\Calculador De Dano E Defesa\Calculador De Dano E Defesa\obj\Debug\Calculador De Dano E Defesa.application
+F:\o\Jogos\Outros\Meus Projetos\Calculador De Dano E Defesa\Calculador De Dano E Defesa\obj\Debug\Calculador De Dano E Defesa.exe
+F:\o\Jogos\Outros\Meus Projetos\Calculador De Dano E Defesa\Calculador De Dano E Defesa\obj\Debug\Calculador De Dano E Defesa.pdb
